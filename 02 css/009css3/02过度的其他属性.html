@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 800px;
+			height: 800px;
+			border: 1px solid #000;
+			margin: 50px auto;
+			list-style: none;
+		}
+		li{
+			transition-property: width;
+			transition-duration: 5s;
+		}
+		ul li{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-top: 10px;
+			
+		}
+		ul li:hover{
+			width: 900px;
+			/*margin-left: 700px;*/
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>linear</li>
+			<li>easy</li>
+			<li>easy-in</li>
+			<li>easy-out</li>
+			<li>easy-in-out</li>
+			<li>cubic-bezier</li>
+		</ul>
+	</div>
+</body>
+</html>

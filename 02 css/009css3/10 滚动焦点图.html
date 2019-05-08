@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 800px;
+			height: 400px;
+			margin: 100px auto;
+			border: 5px solid #000;
+			overflow: hidden;
+		}
+		ul{
+			width: 4000px;
+			height: 400px;
+			animation:sport 6s linear infinite;
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		@keyframes sport{
+			from{
+			margin-left: 0px;
+			}
+			to{
+			margin-left: -3200px;
+			}
+		}
+		ul li{
+			float: left;
+			list-style: none;
+			width: 800px;
+			height: 400px;
+			background-color: red;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		ul li img{
+			width: 100%;
+			height: 100%;
+		}	
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="./img/1.jpg" alt=""></li>
+			<li><img src="./img/2.jpg" alt=""></li>
+			<li><img src="./img/3.jpg" alt=""></li>
+			<li><img src="./img/4.jpg" alt=""></li>
+			<li><img src="./img/1.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

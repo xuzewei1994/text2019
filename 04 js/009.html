@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+		<title>加减乘除运算</title>
+	</head>
+	<body>
+		<h1 align="center">加减乘除运算</h1>
+	
+			<div id="" align="center">
+				
+			
+			
+			数值A：<input type="number" id="a" /> </br>
+		数值B：<input type="number" id="b" /> </br>
+		结果：<input type ="number" id="c"> </br>
+			<input type="button" value="加" onclick="jia()">	
+			<input type="button" value="减" onclick="jian()" >	
+			<input type="button" value="乘" onclick="cheng()">	
+			<input type="button" value="除" onclick="chu()">
+				</div>
+	
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		function jia(){//加法
+			
+			var a=document.getElementById('a').value;
+			var b=document.getElementById('b').value;
+			var c=document.getElementById('c');
+			 c.value=Number(a)+Number(b);
+					
+							
+		}
+			
+		function jian(){//减法
+			
+			var a=document.getElementById('a').value;
+			var b=document.getElementById('b').value;
+			var c=document.getElementById('c');
+			 c.value=Number(a)-Number(b);
+					
+							
+		}
+			
+		function cheng(){//乘法
+			
+			var a=document.getElementById('a').value;
+			var b=document.getElementById('b').value;
+			var c=document.getElementById('c');
+			 c.value=Number(a)*Number(b);
+					
+							
+		}
+			
+		function chu(){//除法
+			
+			var a=document.getElementById('a').value;
+			var b=document.getElementById('b').value;
+			var c=document.getElementById('c');
+			 c.value=Number(a)/Number(b);
+					
+							
+		}
+		
+		
+	</script>
+</html>

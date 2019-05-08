@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>序选择器</title>
+	<style>
+		p:first-child{
+			color: red;
+		}
+		p:last-child{
+			color: green;
+		}
+		h1：first-child{
+			color: gray;
+		}
+		p:nth-child(2){
+			color: yellow;
+		}
+		p:nth-child(odd){
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+	<h1>我是标题</h1>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-css序选择器.html</title>
+    <!--
+    序选择器:
+    css3中新增的选择器最具代表性的就是序选择器
+    1,同级别的第几个
+    :first-child 选中同级别中的第一个
+    :last-child  选中同级别中的最后一个
+    :nth-child(n) 选中同级别中的第n个
+    :nth-last-child(n) 选中同级别中的倒数第n个
+    :only-child 选中父元素中只有一个子元素的元素
+    注意点:不区分类型
+    2,同类型的第几个
+    :first-of-type 选中同级别中同类型的第一个
+    :last-of-type 选中同级别中同类型的最后一个
+    :nth-of-type(n) 选中同级别中同类型的第n个
+    :nth-last-of-type(n) 选中同级别中同类型的倒数第n个
+    :only-of-type 选中父元素中子元素的类型只有一种的元素
+    -->
+    <style>
+        /*p:first-child{
+            color: red;
+		}	*/        
+       /* p:first-of-type{
+            color: red;
+        }*/
+
+       /* p:last-child{
+            color: greenyellow;
+        }*/
+      /*  p:last-of-type{
+            color: green;
+        }*/
+
+       /* p:nth-child(3){
+            color: red;
+        }*/
+       /* p:nth-of-type(3){
+            color: burlywood;
+        }*/
+       /* p:nth-last-child(2){
+            color: purple;
+        }*/
+        /*p:nth-last-of-type(2){
+            color: yellow;
+        }*/
+        /*p:only-child{
+            color: purple;
+        }*/
+     /*   p:only-of-type{
+            color: red;
+        }*/
+    </style>
+</head>
+<body>
+<div>
+    <p>我是段落5</p>
+    <p>我是段落6</p>
+    <p>我是段落7</p>
+    <p>我是段落8</p>
+    <p>我是段落9</p>
+</div>
+<p>我是段落1</p>
+<div>
+    <h1>我是标题</h1>
+    <p>我是段落</p>
+    <p>我是段落2</p>
+</div>
+</body>
+</html>

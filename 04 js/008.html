@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title> 
+<script type="text/javascript">
+function count(){
+var a = parseInt(document.getElementById("tex1").value);
+var b = parseInt(document.getElementById("tex2").value);
+var selectSign = document.getElementById("select").value;
+
+switch (selectSign)
+{
+case '+': answer = a+b;break;
+case '-': answer = a-b;break;
+case '*': answer = a*b;break;
+case '/': answer = a/b;	
+}
+document.getElementById("fruit").value = answer;
+}
+</script> 
+</head>
+<body>
+<input type="text" id="tex1" />
+<select id="select">
+<option value="+">+</option>
+<!-- <option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option> -->
+</select>
+<input type="text" id="tex2" />
+<input type="text" id="txt3">
+<input type="text" id="txt4">
+<input type="text" id="txt5">
+<input type="button" value=" = " onclick="count()" />
+<input type="text" id="fruit" onclick="count()" />
+</body>
+</html>

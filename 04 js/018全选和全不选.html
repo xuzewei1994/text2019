@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="全选" id="on" />
+	<input type="button" value="全不选" id="off" />
+	<input type="button" value="反选" id="reserve" />
+	<div id="box">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('on');
+	var oBox2 = document.getElementById('off');
+	var oBox3 = document.getElementById('reserve');
+	var oBox = document.getElementById('box');
+	var aInput = document.querySelectorAll('#box input');
+	console.log(aInput);
+
+	oBox1.onclick = function(){
+		for(var i = 0;i<aInput.length;i++){
+			aInput[i].checked = true;
+		}
+	}
+	oBox2.onclick = function(){
+		for(var i = 0;i<aInput.length;i++){
+			aInput[i].checked = false;
+		}
+	}
+	oBox3.onclick = function(){
+		for(var i = 0;i<aInput.length;i++){
+			if(aInput[i].checked == true){
+				aInput[i].checked = false;
+			}else{
+				aInput[i].checked = true;
+			}
+		}
+	}
+</script>
+</html>

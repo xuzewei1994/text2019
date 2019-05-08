@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			width: 500px;
+			height: 800px;
+			border: 1px solid #000;
+			margin: 0 auto;
+		}
+		.son{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			animation:sport 4s linear infinite;
+		}
+		/*@keyframes sport{
+			from{
+			width: 100px;
+			}
+			to{
+			width: 500px;
+			}
+		}*/
+		@keyframes sport{
+			0%{
+			left: 0;
+			top: 0;
+			}
+			25%{
+			left: 400px;
+			top: 0;
+			}
+			50%{
+			left: 400px;
+			top: 700px;
+			}
+			75%{
+			left: 0;
+			top: 700px;
+			}
+			100%{
+			left: 0;
+			top: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

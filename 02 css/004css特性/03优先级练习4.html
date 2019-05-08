@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>行内样式>id选择器>类选择器>标签选择器>*通配符选择器>继承</title>
+
+    <!-- 选择器在查找元素的时候不是从左往右找，而是从右往左找 -->
+
+    <style>
+        从右往左找
+        div div { 先找到一个子元素标签为div,然后再找这个元素是否有一个父元素标签也为div
+            color: red;
+        }
+        div {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    文字
+    <div>
+        文字
+        <div>文字</div>
+    </div>
+</div>
+</body>
+</html>

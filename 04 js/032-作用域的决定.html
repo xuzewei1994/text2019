@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function fn(){
+		console.log("fn = ",a);//定义时a的值是1
+	}
+	function fn1(){
+		var a =2;
+		console.log("fn1 = ",a);//2
+		fn();//执行时a的值是2
+	}
+	fn1();
+</script>
+</html>

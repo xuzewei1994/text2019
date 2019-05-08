@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		 ul{
+			list-style: none;
+			text-align: center;
+
+		}
+		li{
+			width: 20%;
+		 	float: left;
+			line-height: 50px;
+		}
+		li:nth-child(3){
+			position: relative;
+			background-color: red;
+		}
+		a{
+			text-decoration:none;
+			font-weight: 500px;
+			font-size: 16px;
+			color: black;
+		}
+		img{
+			position: absolute;
+			left: 50%;
+			top: -19px;
+			margin-left: -20px;
+		}
+		section{
+			position: relative;
+		}
+		 .continer{
+			position: relative;
+			width: 1200px;
+			margin: 0 auto;
+		}
+		 .capital{
+			position:fixed;
+			top:20px;
+			left: 50%;
+			margin-left: -600px;
+			height: 50px;
+			background-color: gray;
+			box-sizing: border-box;
+			z-index: 5;
+		}
+		 .picture{
+			position: relative;
+			top: 50px;
+			height: 500px;
+		}
+		 .picture .poster{
+			position: relative;
+			top: 50px;
+			left:50%;
+			margin-left: -400px;
+			width: 800px;
+			height: 400px;
+			background: url(./img/ad1.jpg) no-repeat;
+			box-sizing: border-box;
+		}
+		.picture .left-shift{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -50px;
+			width: 50px;
+			height: 100px;
+			background:url(./img/left.png) no-repeat;
+			opacity: 0.8;
+		}
+		.picture .right-shift{
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -50px;
+			width: 50px;
+			height: 100px;
+			background:url(./img/right.png) no-repeat;
+			opacity: 0.8;
+		}
+		 .content{
+		 	margin-top: 70px;
+			height: 1200px;
+			background-color: blue;
+		}
+		.scroll-left{
+			position: fixed;
+			left: 0;
+			top: 200px;
+			width: 200px;
+			height: 400px;
+			background-color: red;
+		}
+		.scroll-right{
+			position: fixed;
+			right: 0;
+			top: 200px;
+			width: 200px;
+			height: 400px;
+			background-color: red;
+		}
+		.return{
+			position: fixed;
+			right: 0px;
+			bottom: 0;
+			width: 100px;
+			height: 100px;
+			background-color: gray;
+			text-align: center;
+			font-weight: bold;
+			font-size: 20px;
+			line-height: 100px;
+		}
+		.return a{
+			color: purple;
+		}
+	</style>
+</head>
+<body>
+	<header></header>
+	<section class="capital continer clearfix">
+		<ul>
+			<li><a href="#">天猫会员</a></li>
+			<li><a href="#">品牌街</a></li>
+			<li><a href="#">电器城</a><img src="./img/tmall.png" alt=""></li>	
+			<li><a href="#">营业厅</a></li>
+			<li><a href="#">魅力惠</a></li>
+		</ul>
+	</section>
+	<section class="picture continer ">
+		<div class="poster">
+			<a href="#"><div class="left-shift"></div></a>
+			<a href="#"><div class="right-shift"></div></a>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</section>
+	<section class="content continer clearfix">我是内容</section>
+	<section class="scroll-left"></section>
+	<section class="scroll-right"></section>
+	<section class="return"><a href="#">返回顶部</a></section>
+</body>
+</html>

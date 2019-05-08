@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父元素与子元素margin-top重叠</title>
+	<!--  按照我们的“设想”，“box1”应该要在其父元素内相对于其父元素top50px，但是现在却是“box1”和其父元素的相对位置不变，但它和其父元素一起相对于原先的位置左上角向下偏移了50px，这是为什么呢？这是因为父元素和子元素的margin-top重叠了，即父元素共用了子元素的margin-top，也就是说此时子元素的margin-top就是父元素的margin-top。 -->
+	<style>
+		*{
+			width: 0;
+			margin:0;
+		}
+		.box{width: 500px;
+			height: 300px;
+			background: red;
+			overflow: hidden;
+		}
+		.box1{
+			width: 100%;
+			background: blue;
+			margin-top: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">box1</div>
+	</div>
+</body>
+</html>

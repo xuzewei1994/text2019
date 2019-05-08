@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function fn(){
+		// console.log("fn = " +a);//undefined
+		// alert(a);
+		var a = 2;
+		function fn1(){
+			console.log("fn1 = " +a);//2
+		}
+		fn1();
+	}
+	// console.log("global1 = " +a);//1
+	// alert(a);
+	fn();
+	console.log("global2 = " +a);//1
+</script>
+</html>

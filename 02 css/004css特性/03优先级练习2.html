@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 行内样式>id选择器>类选择器>标签选择器>*通配符选择器>继承</title>
+    <style>
+        * { /*通配符选择器*/
+            color: pink;
+        }
+        body {  /*继承*/
+            color: green;
+        }
+        div {   /*标签选择器*/
+            color: blue;
+        }
+        .d1 {   /*类选择器*/
+            color: yellow;
+        }
+        #d2 {   /*id选择器*/
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <!--行内样式-->
+   <div style="color: red " class="d1" id="d2">优先级</div>
+</body>
+</html>

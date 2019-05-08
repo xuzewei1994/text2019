@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father1{
+			width: 1000px;
+			/*height: 100px;*/
+			/*border: 1px solid transparent;*/
+			margin: 10px auto;
+			/*overflow: hidden;*/
+		}
+		.clearfix:after{
+			display: block;
+			content: "";
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		 .son1{
+		 	float: left;
+			width: 100px;
+			height: 100px;
+			background-color: tomato;
+		}
+		 .son2{
+		 	float: right;
+			width: 200px;
+			height: 50px;
+			background-color: gray;
+		}
+		 .son3{
+		 	float: right;
+			width: 800px;
+			height: 50px;
+			background-color: purple;
+		}
+		.father2{
+			width: 1000px;
+			height: 600px;
+			border: 1px solid transparent;
+			margin: 10px auto;
+		}
+		.son11{
+			float: right;
+			width: 150px;
+			height: 600px;
+			background-color: skyblue;
+		}
+		.son22{
+			float: right;
+			width: 150px;
+			height: 540px;
+			background-color: pink;
+			margin-right: 10px;
+		}
+		.son33{
+			float: left;
+			width: 680px;
+			height: 300px;
+			background-color: yellow;
+			opacity: 0.5;
+		}
+		.son44{
+			float: left;
+			width: 680px;
+			height: 230px;
+			background-color: yellow;
+			margin-top: 10px;
+			opacity: 0.5;/*不透明度*/
+		}
+		.son55{
+			float: left;
+			width: 840px;
+			height: 50px;
+			background-color: red;
+			margin-top: 10px;
+		}
+		.father3{
+			width: 1000px;
+			height: 50px;
+			border: 1px solid transparent;
+			margin: 10px auto;
+		}
+		.son111{
+			width: 1000px;
+			height: 50px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1 clearfix">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="son3"></div>
+	</div>
+	<div class="father2">
+		<div class="son11"></div>
+		<div class="son22"></div>
+		<div class="son33"></div>
+		<div class="son44"></div>
+		<div class="son55"></div>
+	</div>
+	<div class="father3">
+		<div class="son111"></div>
+	</div>
+</body>
+</html>

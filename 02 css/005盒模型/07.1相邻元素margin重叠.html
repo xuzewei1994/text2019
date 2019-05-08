@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 如果按照我们的原来的“设想”，两个段落之间的距离应该是2em，但是效果却显示的是1em，只有红色框（2em）的一半高，这是因为第一段的margin-bottom和第二段的margin-top出现了重叠，两个都是1em，但却不是相加的2em，而是1em，这个需要注意。
+	<style type="text/css">
+		p{
+			line-height: 2em;
+			background: red;
+			margin: 1em;
+		}
+		
+	</style>
+</head>
+<body>
+	<p>我是第一行</p>
+	<p>我是第二行</p>
+</body>
+</html>

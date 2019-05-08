@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			/*animation-name: sport;
+			animation-duration: 2s;*/
+			animation:sport 2s linear infinite alternate;
+		}
+		div:hover{
+			animation-play-state: paused;
+		}
+		@keyframes sport{
+			from{
+			width: 100px;
+			}
+			to{
+			width: 500px;
+			}
+		}
+	/*	@keyframes sport{
+			from{
+			width: 500px;
+			}
+			to{
+			width: 100px;
+			}
+		}*/
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

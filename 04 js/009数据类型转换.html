@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		margin-left: 20px;
+	}
+</style>
+<body>
+	<input type="text" id="txt1">+
+	<input type="text" id="txt2">-
+	<input type="text" id="txt3">*
+	<input type="text" id="txt4">/
+	<input type="text" id="txt5">=
+	<input type="text" id="txt6">
+	<button id="btn">求和</button>
+</body>
+<script>
+	var oTxt1 = document.getElementById('txt1')
+	var oTxt2 = document.getElementById('txt2')
+	var oTxt3 = document.getElementById('txt3')
+	var oTxt4 = document.getElementById('txt4')
+	var oTxt5 = document.getElementById('txt5')
+	var oTxt6 = document.getElementById('txt6')
+	var oBtn = document.getElementById('btn')
+	
+	oBtn.onclick = function(){
+		var oVal1 = parseFloat(oTxt1.value);
+		var oVal2 = parseFloat(oTxt2.value);
+		var oVal3 = parseFloat(oTxt3.value);
+		var oVal4 = parseFloat(oTxt4.value);
+		var oVal5 = parseFloat(oTxt5.value);
+		oTxt6.value = (oVal1 + oVal2 - oVal3 * oVal4 / oVal5);
+	}
+</script>
+</html>

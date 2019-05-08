@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// function fact(num){
+	// 	if(num == 1){
+	// 		return 1;
+	// 	}else{
+	// 		return num * fact(num-1);
+	// 	}
+	// }
+	// alert(fact(7));
+	// function fact(num){
+	// 	if(num == 1){
+	// 		return 1;
+	// 	}
+	// 	console.log(arguments.callee(num-1));
+	// 	return num * arguments.callee(num-1);
+
+	// }
+	// var fact2 = fact;
+	// alert(fact2(5));
+	function factorial(num){
+      if(num<=1){
+          return 1;
+      }else{
+          return num*arguments.callee(num-1);  //arguments.callee代表factorial
+      }
+  }
+  var trueFactorial = factorial;
+  factorial = function(){
+      return 0;
+  }
+   alert(trueFactorial(5)); //结果为120，因为js中函数没有重载，所以如果递归调用时使用函数名，则执行最后一个该函数名的函数，即返回0
+   alert(factorial(5));//结果为0
+
+   // 匿名函数的递归：
+   var num = (function(num){
+      if(num<=1){
+          return 1;
+      }else{
+          return num*arguments.callee(num-1);
+      }
+ })(5);
+  alert(num); //结果为120
+</script>
+</html>
