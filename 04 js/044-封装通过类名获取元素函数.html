@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="list">
+		<div class="box">1</div>
+		<div class="box">2</div>
+		<div>3</div>
+		<div class="box">4</div>
+		<div>5</div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementsByClassName('box');
+	var oDiv = document.getElementById('list');
+	console.log(oBox);
+	function getElementsByClass(oParent,sClass){
+		var classArr = [];
+		aNodes = oParent.querySelectorAll('*');
+		for(var i = 0;i < aNodes.length;i++){
+			if(aNodes[i].className == sClass){
+				classArr.push(aNodes[i]);
+			}
+		}
+		return classArr;
+	}
+	console.log(getElementsByClass(oDiv,"box"));
+</script>
+</html>

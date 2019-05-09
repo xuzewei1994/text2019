@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="list">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script>
+	var oUL = document.getElementById('list');
+	var oNodes = oUL.childNodes;
+	var oNodesChildren = oUL.children;
+	var oNodesFirst = oUL.firstChild;
+	var oNodesLast = oUL.lastChild;
+	var oNodesFirstElement = oUL.firstElementChild;
+	var oNodesLastElement = oUL.lastElementChild;
+
+
+	console.log(oNodes);
+	console.log(oNodesChildren);
+	console.log(oNodesFirst);
+	console.log(oNodesLast);
+	console.log(oNodesFirstElement);
+	console.log(oNodesLastElement);
+</script>
+</html>
