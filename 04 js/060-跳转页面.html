@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">前进</button>
+	<button id="btn2">后退</button>
+	<a href="https://www.kuazhu.com">跨猪网</a>
+</body>
+<script>
+	var OBtGo = document.getElementById('btn1');
+	var OBtBack = document.getElementById('btn2');
+	OBtGo.onclick = function(){
+		window.history.go(1)
+	}
+	OBtGo.onclick = function(){
+		window.history.go(-1)
+	}
+</script>
+</html>

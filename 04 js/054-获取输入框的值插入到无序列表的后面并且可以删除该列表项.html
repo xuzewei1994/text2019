@@ -8,6 +8,7 @@
 	<textarea  id="txt" cols="30" rows="10"></textarea>
 	<button id="btn">发送</button>
 	<ul id="list">
+		<li>123 <a href="javascript:;">撤销</a></li>
 	</ul>
 </body>
 <script>
@@ -18,6 +19,7 @@
 	oBtn.onclick = function(){
 		var sVal = oTxt.value;
 		var oLi = document.createElement('li');
+		oLi.innerHTML = sVal;
 		var oA = document.createElement('a');
 		oA.herf = "javascript:;";
 		oA.innerHTML = "撤销";
