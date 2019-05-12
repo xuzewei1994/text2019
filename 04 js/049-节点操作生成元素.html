@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="text">生成元素</button>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	oText.onclick = function(){
+		var oDiv = document.getElementsByTagName('div')
+		document.creatElement('div');
+		document.body.appendChild(oDiv);
+	}
+</script>
+</html>

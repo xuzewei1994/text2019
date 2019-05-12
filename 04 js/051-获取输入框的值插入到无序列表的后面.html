@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<button id="btn">插入</button>
+	<ul id="list">
+		
+	</ul>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oLi = document.getElementById('list');
+	oBtn.onclick = function(){
+		var sVal = oText.value;
+		var newLi = document.createElement('li');//生成元素
+		newLi.innerHTML = sVal;//元素重新赋值
+		oLi.appendChild(newLi);//追加元素
+		oText.value = "";
+	}
+</script>
+</html>

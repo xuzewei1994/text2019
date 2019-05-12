@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<button id="btn">获取节点</button>
+	<ul id="ul2">
+		
+	</ul>
+</body>
+<script>
+	var oUl1 = document.getElementById('ul1');
+	var aLi = oUl1.children;
+	var oBtn = document.getElementById('btn');
+	var oUl2 = document.getElementById('ul2');
+	oBtn.onclick = function(){
+		oUl2.appendChild(aLi[0]);
+	}
+</script>
+</html>

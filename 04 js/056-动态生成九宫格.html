@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		#box{
+			position: relative;
+		}
+		div{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">添加</button>
+	<div id="box">
+		<div class="node"></div>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var aNodes = oBox.children;
+	var iWidth = 100;
+	var iHeight = 100;
+	var iMargin = 15;
+	var iCooAll = 3;
+
+	oBtn.onclick = function(){
+		var newNode = aNodes[0].cloneNode(true);
+		oBox.appendChild(newNode);
+		for(i = 0;i < aNodes.length;i++){
+			aNodes[i].style.top = parseInt(i / iCooAll) * (iHeight + iMargin) + "px";
+			aNodes[i].style.left = (i % iCooAll) * (iWidth + iMargin) + "px";
+		}
+	}
+</script>
+</html>
