@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text" placeholder="111" name="txt">
+	<button id="btn">点击</button>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oForm = document.forms[0];
+	// var oTxt = oForm.txt;
+	oBtn.onclick = function(){
+		var sValue = oText.value;
+		if(sValue == 1){
+			alert(103);
+		}
+	}
+</script>
+</html>

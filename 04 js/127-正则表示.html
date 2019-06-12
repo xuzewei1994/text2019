@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = "xzw 123 789 5 sda56"
+	var result = [];
+	var tmp = "";
+	for(var i=0;i<str.length;i++){
+		if(!isNaN(parseInt(str.charAt(i)))){
+			tmp = tmp+str.charAt(i);
+		}else{
+			if(tmp){
+				result.push(tmp);
+				tmp = "";
+			}
+		}
+	}
+	if(tmp){
+				result.push(tmp);
+				tmp = "";
+	}
+	console.log(result);
+	// console.log(str.match(/\d+/g));
+</script>
+</html>

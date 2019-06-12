@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn1">点击</button>
+	<button id="btn2">点击移除</button>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	oBtn1.addEventListener("click",,false);
+	oBtn1.addEventListener("click",function(){
+					alert(2);
+	},false);			
+	oBtn1.addEventListener("click",function(){
+					alert(3);
+	},false);
+	oBtn2.removeEventListener("click",function(){
+					alert(1);
+	},false);
+</script>
+</html>

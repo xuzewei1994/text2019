@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="https://www.kuazhu.com/" target="_blank">
+		<input type="submit" name="submit">
+		<input type="image" name="submit" src="images/v-logo-1.png">
+		<button type="submit" name="submit">点击</button> 
+	</form>
+	
+</body>
+<script>
+	var oForm = document.forms[0];
+	var Osubmit = oForm.submit;
+	console.log(Osubmit)Osubmit
+	Osubmit.onclick = function(){
+		Osubmit.onsubmit();
+	}
+</script>
+</html>

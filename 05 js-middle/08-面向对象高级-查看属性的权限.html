@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.LEGS = 2;
+	var p1 = new Person("tom",18);
+	//定义多个属性
+	Object.defineProperties(p1,{
+		HAND:{
+			value:2,
+			enumerable:false,
+			writable:true,
+			configurable:true
+		},
+		MOUTH:{
+			value:1,
+			enumerable:false,
+			writable:false,
+			configurable:false
+		}
+	})
+	console.log(p1);
+	console.log(Object.getOwnPropertyDescriptor(p1,"__proto__"));
+</script>
+</html>

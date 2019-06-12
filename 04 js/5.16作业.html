@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	今日考核  写一个函数，该函数有两个参数，当调用函数时，会返回一个随机数，这个随机数的范围就是你传入的两个参数之间的任意数，如传入0，100就会返回0-100之间的任意数.
+	*/
+	function radiomNumber(a,b){
+		var d = Math.round(Math.random()*(b-a)+a);
+		return d;
+	}
+	var result = radiomNumber(0,100);
+	console.log(result);
+</script>
+</html>

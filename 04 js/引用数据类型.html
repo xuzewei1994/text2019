@@ -8,10 +8,15 @@
 	
 </body>
 <script>
-var a = 10;
-var b = a;
-b = 20;
-console.log(a); // 10值
-console.log(b); // 20值
+	var a = 2;
+	function test(){
+		console.log(a);
+	}
+	function use(){
+		var a = 1;
+		test();
+	}
+	var a = 99;
+	use();
 </script>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#bigbox{
+			position: relative;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #000;
+		}
+		#mask{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			opacity: 0.5;
+			cursor: move;
+		}
+		#smallbox{
+			width: 300px;
+		}
+		#smallbox li{
+			margin-left: 10%;
+			float: left;
+			width: 54px;
+			height: 54px;
+			/*border: 1px solid #000;*/
+		}
+		#largebox{
+			position: absolute;
+			top: 0px;
+			left: 450px;
+			width: 800px;
+			height: 800px;
+			border: 1px solid #000;
+		}
+		.active{
+			width: 54px;
+			height: 54px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bigbox">
+			<img src="image/p_b_0002.jpg" alt="">
+			<div id="mask"></div>
+		</div>
+		<ul id="smallbox">
+			<li class="active"><img src="image/p_s_0001.jpg" alt=""></li>
+			<li><img src="image/p_s_0002.jpg" alt=""></li>
+			<li><img src="image/p_s_0003.jpg" alt=""></li>
+		</ul>
+		<div id="largebox">
+			<img src="image/p_l_0001.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var oWrap = document.getElementById('wrap');
+	var oBigbox = document.getElementById('bigbox');
+	var oBigImg = document.querySelector('#bigbox img');
+	var oLargeBox = document.getElementById('largebox');
+	var oLargeImg = document.querySelector('#largebox img');
+	var oMask = document.getElementById('mask');
+	var oSmallImgs = document.querySelectorAll('#smallbox li');
+
+	for(i = 0;i < oSmallImgs.length; i++){
+		oSmallImgs[i].index = i;
+		oSmallImgs[i].onmouseover = function(){
+			for(j=0;j<oSmallImgs.length;j++){
+				oSmallImgs[j].className = "";
+			}
+			this.className = "active";
+			oBigImg.src = "image/p_b_000"+(this.index+1)+".jpg"
+			oLargeImg.src = "image/p_l_000"+(this.index+1)+".jpg"
+		}
+	}
+</script>
+</html>

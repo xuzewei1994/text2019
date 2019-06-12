@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	oBox.onmousedown = function(event){	
+		var disX = event.clientX - oBox.offsetLeft;
+		var disY = event.clientY - oBox.offsetTop;
+		document.onmousemove = function(event){
+			oBox.style.left = event.clientX - disX + "px";
+			oBox.style.top = event.clientY - disY + "px";
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

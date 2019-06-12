@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+			opacity: 0.2;
+		}
+		.line{
+			position: absolute;
+			top: 0px;
+			left: 400px;
+			width: 1px;
+			height: 800px;
+			background: #000;
+
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击动画</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer;
+	var iSpand = 0;
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			var currentVal = parseFloat(getComputedStyle(oBox,false)["opacity"]);
+			currentVal = currentVal*100;
+			if(currentVal < 100){
+				iSpand = 10;
+			}else{
+				iSpand = -100;
+			}
+			if(Math.abs(100 - currentVal) < Math.abs(iSpand)){
+				oBox.style.left = 1;
+				clearInterval(timer);
+			}else{
+				oBox.style.opacity = (currentVal + iSpand) / 100;
+			}
+		},30)
+	}
+</script>
+</html>

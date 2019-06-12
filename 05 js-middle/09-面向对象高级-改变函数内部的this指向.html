@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	var p1 = new Person();
+
+	function show(n1,n2){
+		console.log(this,n1,n2);
+	}
+	show(1,2);
+	// show(1,2);
+	// var a = new show(1,2);
+	// show.call(p1,1,2);
+	// show.apply({name:"leo"},[1,2]);
+	// show.bind({name:"aimy"})(1,2);
+	// show.call(null,1,2);
+	// show.apply(null,[1,2]);
+	// show.bind(null)(1,2);
+	// show.call({},1,2);
+	// console.log(show.call(null) === window.show())
+	// console.log(show.call(null) === show({}))
+</script>
+</html>

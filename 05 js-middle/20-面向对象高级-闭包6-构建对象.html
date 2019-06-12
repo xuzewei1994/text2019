@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style></style>
+</head>
+<body></body>
+<script>
+	(function(w){
+		function Person(name,age){
+		this.name = name;
+		this.age = age;
+		}
+		Person.prototype = {
+			showName:function(){
+				console.log("I am"+this.name);
+			},
+			showAge:function(){
+			console.log("I am"+this.age+" years old");
+			}
+		}
+		w.Person = Person;
+	})(window);
+	
+	(function(w){
+		function Student(name,age,major){
+		this.name = name;
+		this.age = age;
+		this.major = major;
+		}
+		Person.prototype = {
+			showName:function(){
+				console.log("I am"+this.name);
+			},
+			showAge:function(){
+			console.log("I am"+this.age+" years old");
+			},
+			showMajor:function(){
+				console.log("I am"+this.major+" major");
+			}
+		}
+		w.Student = Student;
+	})(window);
+	
+	var s1 = new Student("tom",18,"computer");
+	console.log(s1);
+
+	var p1 = new Person("tom",18);
+	console.log(p1);
+</script>
+</html>

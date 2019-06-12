@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击事件</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	//1.生成一个事件
+	var event = new Event('test');
+	//2.绑定自定义事件
+	oBtn.addEventListener('test',function(){
+		alert("new event");
+	},false)
+	//3.触发自定义事件
+	oBtn.addEventListener('click',function(){
+		oBtn.dispatchEvent(event);
+	},false);
+</script>
+</html>

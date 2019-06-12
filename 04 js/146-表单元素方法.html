@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" name="username" autocomplete="off">
+		<p id="msg"></p>
+	</form>
+</body>
+<script>
+	var oForms = document.forms[0];
+	var oUsername = oForms.username;
+	var oMsg = document.getElementById('msg');
+	oUsername.onfocus = function(){
+		oMsg.style.color = "blue";
+		oMsg.innerHTML = "请输入7-14为有效字符"
+	}
+	oUsername.onblur = function(){
+		var sVal = oUsername.value;
+		var reg = /^.{7,14}$/;
+		if(!reg.test(sVal)){
+			oMsg.style.color = "red";
+			oMsg.innerHTML = "请输入7-14为有效字符"
+		}else{
+			oMsg.style.color = "green";
+			oMsg.innerHTML = "合法"
+		}
+	}
+</script>
+</html>

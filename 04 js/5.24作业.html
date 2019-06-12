@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 400px;
+			height: 400px;
+			border: 1px solid #000;
+			margin:100px auto;
+		}
+		li{
+			list-style: none;
+			line-height: 40px;
+			border-bottom: 1px dotted #000;
+		}
+		a{
+			color: #f69;
+			float: right;
+			cursor: pointer;
+		}
+		#txt{
+			position: absolute;
+			top: 500px;
+			left: 400px;
+			width: 300px;
+			height: 30px;
+			background: pink;
+		}
+		#btn{
+			position: absolute;
+			top: 500px;
+			left: 710px;
+			width: 50px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="txt" test="123" showName="456">
+	<button id="btn">提交</button>
+	<div>
+		<ul id="list">
+			<!-- <li><a href="#">撤销</a></li> -->
+		</ul>
+	</div>
+</body>
+<script src="js/animation.js"></script>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('list');
+	oBtn.onclick = function(){
+		var sVal = oTxt.value;
+		var oLi = document.createElement('li');
+		oLi.innerHTML = sVal;
+		var oA = document.createElement('a');
+		oA.href = "javascript:;";
+		oA.innerHTML = "撤销";
+		oA.onclick = function(){
+			oUl.removeChild(this.parentNode);
+		}
+		oLi.appendChild(oA);
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oTxt.value = "";
+	}
+</script>
+</html>

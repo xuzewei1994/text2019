@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn">点击</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.addEventListener("click",function(){
+		console.log('oBtn hellow');
+	},"true");
+	window.addEventListener("click",function(){
+		console.log('window hellow');
+	},"true");
+	document.addEventListener("click",function(){
+		console.log('document hellow');
+	},"true");
+	document.body.addEventListener("click",function(){
+		console.log('document.body hellow');
+	},"true");
+</script>
+</html>

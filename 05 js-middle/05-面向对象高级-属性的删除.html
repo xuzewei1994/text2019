@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.sayName = function(){
+		console.log("i am"+this.name);
+	}
+	var p1 = new Person("tom",18);
+	console.log(p1);
+	console.log(delete p1.name);
+	console.log(p1);
+	console.log(Person.prototype);
+	console.log(delete Person.prototype.sayName);
+	console.log(Person.prototype);
+	console.log(Object.prototype);
+	console.log(Object.__proto__.__proto__);
+</script>
+</html>

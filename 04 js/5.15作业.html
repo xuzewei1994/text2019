@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<img src="image/2.png" alt="">
+		<img src="image/3.png" alt="">
+		:
+		<img src="image/1.png" alt="">
+		<img src="image/1.png" alt="">
+		:
+		<img src="image/1.png" alt="">
+		<img src="image/1.png" alt="">
+	</div>
+</body>
+<script>
+	function to2Str(num){ //定义了一个用来处理时间的函数
+		return num < 10 ? '0'+num : ''+num; //函数的返回值，无论是各位还是两位都会返回出两位
+	}
+	var oBox = document.getElementById('box'); //获取DOM元素
+	var aImg = oBox.children; //获取子元素
+	var timer = 0; //定义了一个变量一会用来控制定时器的开关
+	var orderTime = new Date('2019-12-07 19:00:00'); //创建一个指定时间的变量
+	var endTime = orderTime.getTime();//2018-12-07 19：00：00距离1970-01-01 00 ：00：00的毫秒数
+	function time(){ //封装一个函数，方便调用
+		var allTime = (endTime - Date.now())/1000; //获取实时时间与目标时间的插值，并将之转换为以秒为单位。
+		if(allTime <= 0 ){ //判断倒计时是否结束
+			allTime = 0; //为了不让时间显示为复数，当小于零时清零
+			clearInterval(timer); //关闭timer计时器
+		}
+		var oH = parseInt(allTime/3600); //对时间差值进行运算并取整，得出剩余的小时数
+		var oM = parseInt((allTime%3600)/60); //对时间差值进行运算并取整，得出剩余的分钟数
+		var oS = parseInt(allTime%3600)%60; //对时间差值进行运算并取整，得出剩余的毫秒数
+		var time = to2Str(oH)+to2Str(oM)+to2Str(oS); //字符串拼接得到完整时间
+		for(var i =0;i<aImg.length;i++){ //遍历字符串的长度
+			aImg[i].src = 'image/'+time.charAt(i)+'.png'; //根据得到的完整字符串，将对应的位置换成图片，
+		}
+
+	}
+	timer = setInterval(time,1000); //开启定时器，将其名称设置为timer
+	time(); //初始化时要检查一下timer函数，避免刷新页面就会出现00：00：00的情况。
+
+</script>
+</html>

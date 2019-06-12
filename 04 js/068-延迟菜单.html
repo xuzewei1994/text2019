@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			padding-left:500px; 
+		}
+		#left{
+			float: left;
+			width: 100px;
+			height: 500px;
+			background: gray;
+		}
+		#right{
+			float: left;
+			width: 400px;
+			height: 500px;
+			background: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="left"></div>
+	<div id="right"></div>
+</body>
+<script>
+	var oLeft = document.getElementById('left');
+	var oRight = document.getElementById('right');
+	var time = 0;
+	oLeft.onmouseover = oRight.onmouseover = function(){
+		clearTimeout(time);
+		oRight.style.display = "block"
+	}
+	oLeft.onmouseout = oRight.onmouseout = function(){
+		time = setTimeout(function(){
+			oRight.style.display = "none";
+		},300);
+	}
+</script>
+</html>

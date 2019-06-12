@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#main{
+			position: absolute;
+			top: 0px;
+			left: -400px;
+			width: 400px;
+			height: 400px;
+			background: gray;
+		}
+		#sub{
+			position: absolute;
+			top: 0px;
+			right: -100px;
+			width: 100px;
+			height: 400px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="sub"></div>
+	</div>
+	
+</body>
+<script>
+	var iMain = document.getElementById('main');
+	var iSub = document.getElementById('sub');
+	var timer = 0;
+	iMain.onmouseover = function(){
+		clearInterval(timer);
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			if(iMain.offsetLeft < 0){
+				iSpand = 7;
+			}else{
+				iSpand = -7;
+			}
+			if(Math.abs(0 - iMain.offsetLeft) < Math.abs(iSpand)){
+				iMain.style.left = 0 + "px";
+				clearInterval(timer);
+			}else{
+				iMain.style.left = iMain.offsetLeft + iSpand + "px";
+			}
+		},30)
+	}
+	iMain.onmouseout = function(){
+		clearInterval(timer);
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			if(iMain.offsetLeft < -400){
+				iSpand = 7;
+			}else{
+				iSpand = -7;
+			}
+			if(Math.abs(-400 - iMain.offsetLeft) < Math.abs(iSpand)){
+				iMain.style.left = -400 + "px";
+				clearInterval(timer);
+			}else{
+				iMain.style.left = iMain.offsetLeft + iSpand + "px";
+			}
+		},30)
+	}
+</script>
+</html>

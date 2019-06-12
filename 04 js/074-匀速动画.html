@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		.line{
+			position: absolute;
+			top: 0px;
+			left: 400px;
+			width: 1px;
+			height: 800px;
+			background: #000;
+
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击动画</button>
+	<div id="box"></div>
+	<div class="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer;
+	var iSpand = 0;
+	oBox.onmouseover = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			if(oBox.offsetLeft < 400){
+				iSpand = 10;
+			}else{
+				iSpand = -10;
+			}
+			if(Math.abs(400 - oBox.offsetLeft) < Math.abs(iSpand)){
+				oBox.style.left = "400px";
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpand + "px";
+			}
+		},30)
+	}
+	oBox.onmouseout = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			if(oBox.offsetLeft < 400){
+				iSpand = 10;
+			}else{
+				iSpand = -10;
+			}
+			if(Math.abs(400 - oBox.offsetLeft) < Math.abs(iSpand)){
+				oBox.style.left = "400px";
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpand + "px";
+			}
+		},30)
+	}
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+		name:"tom",
+		age:18,
+		gender:"male",
+		sayHello:function(){
+			console.log("i am tom")
+		}
+	}
+	obj["address"] = "china"
+	obj.age = 20; 
+	delete obj.address
+	console.log('name' in obj);
+	console.log(obj);
+</script>
+</html>

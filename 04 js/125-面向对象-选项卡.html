@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>125-面向对象-选项卡.html</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style: none;
+	}
+	#tab-btn{
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+	#tab-btn li{
+		float: left;
+		width: 100px;
+		line-height: 40px;
+		text-align: center;
+		cursor: pointer;
+	}
+	#tab-content li{
+		width: 300px;
+		height: 300px;
+		line-height: 300px;
+		border: 1px solid #000;
+		text-align: center;
+		display: none;
+	}
+	.active{
+		color: #ff6700;
+		border-bottom: 2px solid #ff6700;
+	}
+</style>
+<body>
+	<ul id="tab-btn">
+		<li class="active">热门</li>
+		<li>电视影音</li>
+		<li>电脑</li>
+		<li>家居</li>
+	</ul>
+	<ul id="tab-content">
+		<li style="display: block">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	/*
+	var aBtns = document.querySelectorAll('#tab-btn li');
+	var aContent = document.querySelectorAll('#tab-content li');
+	for(var i = 0;i < aBtns.length;i++){
+		aBtns[i].index = i;
+		aBtns[i].onmouseover = function(){
+			for(var j = 0;j < aBtns.length;j++){
+				aBtns[j].className = "";
+				aContent[j].style.display = "none"; 
+			}
+			this.className = 'active';
+			aContent[this.index].style.display = "block";
+		}
+	}
+	*/
+	function Tab(){
+		//1.罗列属性
+		this.aBtns = document.querySelectorAll('#tab-btn li');
+		this.aContent = document.querySelectorAll('#tab-content li');
+		//2.绑定事件
+		this.binEvent();
+	}
+	Tab.prototype.binEvent = function(){
+		var oBtn[i].index = i;
+		var _this = this;
+		for(var i=0;i<this.aBtns.length;i++){
+			this.aBtns[i].onclick = function(){
+				_this.fnClick();
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){
+		for(var j=0;j<this.aBtns.length;j++){
+			this.aBtns[j].className = "";
+			this.aContent[j].style.display = "none";
+		}
+			this.aContent[oBtn.index].style.display = "block";
+	}
+	new Tab();
+</script>
+</html>

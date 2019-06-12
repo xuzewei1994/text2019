@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#menu{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			background: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="menu"></div>
+</body>
+<script>
+	// var oMenu = document.getElementById('menu');
+	// document.oncontextmenu = function(ev){
+	// 	oMenu.style.display = "block";
+	// 	oMenu.style.top = ev.clientY + 'px';
+	// 	oMenu.style.left = ev.clientX + 'px';
+	// 	ev.preventDefault();
+	// }
+	// oMenu.onclick = function(ev){
+	// 	ev.stopPropagation();
+	// }
+	// document.onclick = function(){
+	// 	oMenu.style.display = "none";
+	// }
+</script>
+</html>
+<script>
+	var oMenu = document.getElementById('menu');
+	document.oncontextmenu = function(ev){
+		oMenu.style.display = "block";
+		oMenu.style.top = ev.clientY + 'px';
+		oMenu.style.left = ev.clientX + 'px';
+		ev.preventDefault();
+	}
+	oMenu.onclick = function(ev){
+		ev.stopPropagation();
+	}
+	document.onclick = function(){
+		oMenu.style.display = "none";
+	}
+</script>

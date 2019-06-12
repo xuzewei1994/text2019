@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt" autocomplete="off">
+	<button id="btn">发送</button>
+	<ul id="list">
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oLi = document.getElementById('list');
+	oBtn.onclick = function(){
+		var sVal = oText.value;
+		var newLi = document.createElement('li');
+		newLi.innerHTML = sVal;
+		oLi.appendChild(newLi);
+		oText.value = "";
+	}
+</script>
+</html>

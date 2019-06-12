@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	var p1 = new Person("tom",18);
+	//定义单个属性
+	Object.defineProperty(p1,"sex",{
+		value:"male",
+		enumerable:true,//是否可枚举
+		writable:true,//是否可写
+		configurable:true//是否可删除，是否可以修改属性的权限
+	})
+	p1.sex = "female";
+	delete p1.sex;
+	console.log(p1);
+	for(attr in p1){
+		console.log(attr,p1[attr]);
+	}
+</script>
+</html>

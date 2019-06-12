@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+		function Local(name){
+			this.name = name;
+			this.init();
+		}
+		Local.prototype = {
+			constructor:Local,
+			init:function(){
+				var oP = document.createElement('p');
+				oP.innerHTML = this.name + "";
+				document.body.appendChild(oP);
+			}
+		}
+		w.Local = Local;
+	})(window);
+	(function(w){
+		function Foreign(name,local){
+			this.name = name;
+			this.oSpan = null;
+			this.init();
+		}
+		Foreign.prototype = {
+			constructor:Foreign,
+			init:function(){
+				var oP = document.creatElement('p');
+				oP.innerHTML = this.name + "";
+				document.body.appendChild(oP);
+				this.oSpan = document.createElement('span');
+			}
+		}
+	})(window);
+</script>
+</html>

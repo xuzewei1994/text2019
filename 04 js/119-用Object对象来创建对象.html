@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var person1 = new Object();
+	person1.name = "孙悟空";
+	person1.age = 18;
+	person1.sayHello = function(){
+		console.log("i am" + this.name); 
+	}
+	var person2 = new Object();
+	person2.name = "猪八戒";
+	person2.age = 38;
+	person2.sayHello = function(){
+		console.log("i am" + this.name); 
+	}
+	console.log(person1);
+	console.log(person2);
+	console.log(person1.sayHello == person2.sayHello)
+</script>
+</html>

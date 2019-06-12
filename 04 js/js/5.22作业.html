@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>129-动画-加速动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			position: relative;
+			height: 800px;
+			border-bottom: 1px solid #ccc;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<!-- <button id="btn">开始动画</button> -->
+	<div id="father">
+		<div id="box"></div>
+	</div>
+	<div class="line"></div>
+</body>
+<script>
+	// var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = null;
+		timer = setInterval(function(){
+			iSpeed = (oBox.offsetTop + 5)/10;
+			iSpeed = Math.ceil(iSpeed);
+			if(Math.abs(700 - oBox.offsetTop) < Math.abs(iSpeed)){
+				oBox.style.top = "700px";
+				clearInterval(timer);
+			}else{
+				oBox.style.top = oBox.offsetTop + iSpeed + "px";
+			}
+		},30);
+</script>
+</html>

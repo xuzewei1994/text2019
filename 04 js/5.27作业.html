@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age,major){
+		this.name = name;
+		this.age = age;
+		this.major = major;
+		if(!Person.prototype.sayName){
+			Person.prototype.sayName = function(){
+				console.log("I am " +this.name);
+			}
+		}
+		if(!Person.prototype.sayAge){
+			Person.prototype.sayAge = function(){
+				console.log("I am " +this.age+" years old")
+			}
+		}
+		if(!Person.prototype.sayMajor){
+			Person.prototype.sayMajor = function(){
+				console.log("I am a " +this.major +" major")
+			}
+		}
+	}
+	var person1 = new Person("tom",18,"computer");
+	var person2 = new Person("leo",25,"music");
+	person1.sayName();
+	person1.sayAge();
+	person1.sayMajor();
+	person2.sayName();
+	person2.sayAge();
+	person2.sayMajor();
+</script>
+</html>

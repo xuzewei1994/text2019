@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//正则：匹配字符串的规则
+	var str = "abc feda gthas gA"
+	//构造函数
+	var reg1 = new RegExp("a","i");
+	console.log(str);
+	console.log(str.replace(reg1,"*"));
+	//字面量
+	var reg2 = /a/g;
+	console.log(str);
+	console.log(str.replace(reg2,"*"));
+</script>
+</html>

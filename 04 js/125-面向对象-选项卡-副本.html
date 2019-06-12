@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>125-面向对象-选项卡.html</title>
+</head>
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style: none;
+	}
+	#tab-btn{
+		overflow: hidden;
+		margin-bottom: 20px;
+	}
+	#tab-btn li{
+		float: left;
+		width: 100px;
+		line-height: 40px;
+		text-align: center;
+		cursor: pointer;
+	}
+	#tab-content li{
+		width: 300px;
+		height: 300px;
+		line-height: 300px;
+		border: 1px solid #000;
+		text-align: center;
+		display: none;
+	}
+	.active{
+		color: #ff6700;
+		border-bottom: 2px solid #ff6700;
+	}
+</style>
+<body>
+	<ul id="tab-btn">
+		<li class="active">热门</li>
+		<li>电视影音</li>
+		<li>电脑</li>
+		<li>家居</li>
+	</ul>
+	<ul id="tab-content">
+		<li style="display: block">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script>
+	function Tab(){
+		//罗列属性
+		this.aBtns = document.querySelectorAll("#tab-btn li");
+		this.aContents = document.querySelectorAll("#tab-content li");
+		//绑定事件
+		this.bindEvent();
+	}
+	Tab.prototype.bindEvent = function(){
+		var _this = this;//定义一个变量来指向Tab
+		for(var i=0;i<this.aBtns.length;i++){
+			this.aBtns[i].index = i;//存每一次循环的i值
+			this.aBtns[i].onclick = function(){
+				_this.fnClick(this);//传入this来指定每一个li
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){//定义一个oBtns来接收this
+		for(var j=0;j<this.aBtns.length;j++){
+			this.aBtns[j].className = "";//this指向Tab
+			this.aContents[j].style.display = "none";//this指向Tab
+		}
+		oBtn.className = "active";//这里的oBtn代表每一个li
+		this.aContents[oBtns.index].style.display = "block";//接收i值
+	}
+	new Tab();
+</script>
+</html>

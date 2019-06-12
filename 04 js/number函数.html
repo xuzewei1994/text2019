@@ -8,8 +8,15 @@
 
 </body>
 <script>
-	var a= ('123sd')
-	console.log(a)
-	console.log(typeof a)
+	var obj = {
+        name:"孙悟空",
+        age:18,
+        gender:"男",
+        address:"花果山"
+    }
+    for(var n in obj){
+    // console.log("属性名：",n); //"name""age""gender" "address"
+    console.log(obj[n]); // 孙悟空 18 男 花果山
+	}
 </script>
 </html>

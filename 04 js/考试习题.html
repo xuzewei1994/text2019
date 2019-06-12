@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 22.简答：页面中有以下结构，依次进行以下操作：a:在ul列表中最后插入一个<li>4</li>b:在ul列表中头部插入一个<li>0</li>;c:删除列表中的<li>1</li>； -->
+	<ul id=”ul1”>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+<script>
+	var oUl= document.getElementById('ul1');
+	var aLi= oUl.children;
+	var oLi1= document.createElement('li');
+	var oLi2= document.createElement('li');
+	oLi1.innerHTML="4";
+	oLi2.innerHTML="0";
+	console.log(oLi1);
+	oUl.appendChild(oLi1);
+	oUl.insertBefore(oLi2,aLi.firstChid);
+	oUl.removeChild(aLi[1]);
+</script>
+</html>

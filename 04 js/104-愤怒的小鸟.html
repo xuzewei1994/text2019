@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position: relative;
+			width: 500px;
+			height: 800px;
+			border: 2px solid #000;
+			margin: 50px auto;
+		}
+		#bird{
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -25px;
+			width: 50px;
+			height: 50px;
+			background: url(image/bird.jpg) no-repeat;
+			background-size: cover;
+		}
+		.topLine{
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			width: 40px;
+			background: green;
+		}
+		.bottomLine{
+			position: absolute;
+			bottom: 0px;
+			left: 100%;
+			width: 40px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bird"></div>
+	</div>
+</body>
+<script>
+	function getRandom(a,b){
+		var d = Math.round(Math.random()*(b-a)+a);
+		return d;
+	}
+	var oBird = document.getElementById('bird');
+	var oWrap = document.getElementById('wrap');
+	var moveBirdTimer = null;
+	var iSpeed = 0;
+	//游戏死亡判定
+	var iDie = false;
+	//小鸟生存空间
+	var space = 200;
+
+	//生成柱子
+	function arr(){
+		var topLine = document.createElement('div');
+		var bottomLine = document.createElement('div');
+		//随机生成柱子的高度
+		h = getRandom(200,300);
+		//给柱子添加基本样式
+		topLine.className = 'topLine';
+		bottomLine.className = 'bottomLine';
+		//给柱子添加高度
+		topLine.style.height = h + 'px';
+		bottomLine.style.height = oWrap.offsetHeight - h - space - 2 + 'px';
+		//将柱子插入到容器中
+		oWrap.appendChild(topLine);
+		oWrap.appendChild(bottomLine);
+	};
+	arr()
+	setInterval(addLine,600);
+
+	//设定定时器移动柱子
+	clearInterval(moveBirdTimer);
+	moveBirdTimer = setInterval(function(){
+		var aTopLine = document.querySelectorAll('.topLine');
+		var aBottomLine = document.querySelectorAll('.bottomLine');
+		for(var i =0;i<aTopLine.length;i++){
+			aTopLine[i].style.left = aTopLine[i].leftDate - 1 + '%';
+			 aTopLine[i].leftDate = aTopLine[i].leftDate -1;
+		}
+	},30);
+	moveBirdTimer = setInterval(function(){
+		iSpeed += 1;
+		var iTop = oBird.offsetTop + iSpeed;
+		if(iTop<0){
+			iTop=0;
+			death();
+		}else if(iTop>oWrap.offsetHeight - oBird.offsetHeight -4){
+			iTop = oWrap.offsetHeight - oBird.offsetHeight -4;
+			death();
+		}
+		oBird.style.top = iTop + 'px';
+	},30);
+	function death(){
+		clearInterval(moveBirdTimer);
+	}
+	document.onkeydown = function(ev){
+		if(ev.keyCode == 32){
+			iSpeed -= 10;
+		}
+	}
+</script>
+</html>

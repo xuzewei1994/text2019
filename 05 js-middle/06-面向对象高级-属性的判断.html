@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.LEGS = 2;
+	Person.prototype.sayName = function(){
+		console.log("i am"+this.name);
+	}
+	var p1 = new Person("tom",18);
+	// console.log(p1.__proto__.__proto__ === Object.prototype);
+	// console.log(Object.prototype.__proto__);
+	console.log(Object.hasOwnProperty("defineProperty"));
+	// console.log(Person.prototype.hasOwnProperty("LEGS"));
+	// console.log(Person.prototype.__proto__.hasOwnProperty("hasOwnProperty"));
+</script>
+</html>

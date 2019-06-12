@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<button id="btn">注册</button>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+		oBtn.onclick = function(){
+		//任意字母数字下划线(abc.123@163.com)
+		var str = oText.value;
+		var reg = /^\w{3,}@[a-zA-Z0-9]+\.[A-Za-z]{2,5}$/;
+		if(reg.test(str)){
+			alert("合法")
+		}else{
+			alert("不合法")
+		}
+	}
+</script>
+</html>

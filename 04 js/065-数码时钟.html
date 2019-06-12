@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		div{
+			margin-top: 300px;
+			font-size: 100px;
+			color: #fff;
+			line-height: 40px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+	</div>
+</body>
+<script>
+	function time(num){
+		return num<10 ? "0"+num : ""+num;
+	}
+	time();
+	function showTime(){
+		var oTime = document.getElementById('time');
+		var today = new Date();
+		var iHour = today.getHours();
+		var iMinute = today.getMinutes();
+		var iSection = today.getSeconds();
+		oTime.innerHTML = time(iHour) + ":" + time(iMinute) + ":" + time(iSection);
+	}
+	setInterval(showTime,1000);
+	showTime();
+</script>
+</html>

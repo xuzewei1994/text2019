@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function addEvent(elem,eventType,handel){
+		if(elem.addEventListener){
+			elem.addEventListener(eventType,handel,false);
+		}else{
+			elem.attachEvent("on" + eventType,handel);
+		}
+	}
+	function removeEvent(elem,eventType,handel){
+		if(elem.removeEventListener){
+			elem.removeEventListener(eventType,handel,false);
+		}else{
+			elem.deatchEvent("on" + eventType,handel);
+		}
+	}
+</script>
+</html>

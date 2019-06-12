@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//语法错误
+	/*
+	//1.中文输入指令
+	var a = 1；// Uncaught SyntaxError: Invalid or unexpected token
+	*/
+
+	/*
+	//2.少打，漏打，多打
+	var b = ;// Uncaught SyntaxError: Unexpected token ;
+	if(true){}}// Uncaught SyntaxError: Unexpected token }
+	*/
+
+	/*
+	//3.变量名不合法
+	var class = 123;// Uncaught SyntaxError: Unexpected token class
+	*/
+
+	/*
+	//4.语法写错
+	fnctionn rest(){};// Uncaught SyntaxError: Unexpected identifier
+	*/
+
+	//运行时错误
+	/*
+	//1.变量引用异常触发的错误
+	console.log(a);//Uncaught ReferenceError: a is not defined
+	*/
+
+	/*
+	//2.类型使用时错误
+	var a = 1;
+	a();// Uncaught TypeError: a is not a function
+	*/
+
+	/*
+	//3.递归爆栈时触发
+	function fn(){fn()};
+	fn();// Uncaught RangeError: Maximum call stack size exceeded
+	*/
+
+	//4.主动触发异常
+	function sum(num){
+		try{
+			var result = 0;
+			if(isNaN(parseInt(num))){
+				throw new Error("is not a number");
+			}
+			for(var i=0;i<=num;i++){
+				result += i;
+			}
+			return result;
+		}
+		catch(e){
+			console.log(e);
+		}
+		finally{
+			console.log("always do something");
+		}
+	}
+		
+	function show(num){
+		return num*10;
+	}
+	var total = sum("a");
+	console.log(total);
+	console.log(show(total));
+</script>
+</html>

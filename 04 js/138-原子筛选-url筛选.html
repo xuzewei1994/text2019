@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//url解析: str.match(/(\w+):\/\/(\w+)\.([0-9a-z-]+)\.(\w+)/)
+	var str = "this is a https://www.kuazhu.com"
+	var reg = /(\w+):\/\/(\w+)\.([0-9a-z]+)\.(\w+)/;
+	console.log(str);
+	console.log(str.match(reg));
+	console.log(str.replace(reg,"*"));
+</script>
+</html>

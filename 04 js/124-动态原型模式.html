@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function createPerson(name,age){
+		this.name = name;
+		this.age = age;
+		if(!createPerson.prototype .sayName){
+			console.log(11);
+			createPerson.prototype .sayName = function(){
+				console.log("I am " + this.name);
+			}
+		}
+		if(!createPerson.prototype .sayAge){
+			createPerson.prototype .sayAge = function(){
+				console.log("I am " + this.age + " years old");
+			}
+		}
+	}	
+	var person1 = new createPerson("tom",18);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1);
+	var person2 = new createPerson("leo",30);
+	person2.sayName();
+	person2.sayAge();
+	console.log(person2);
+</script>
+</html>

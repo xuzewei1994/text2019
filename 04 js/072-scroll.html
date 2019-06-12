@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	// var iScrollTop = 0;
+	// var iScrollLeft = 0;
+	// if(document.compatMode == "css1Compat"){
+	// 	iScrollTop = document.documentElement.scrollTop;
+	// 	iScrollLeft = document.documentElement.scrollLeft;
+	// }else{
+	// 	iScrollTop = document.body.scrollTop;
+	// 	iScrollLeft = document.body.scrollLeft;
+	// }
+	// console.log(iScrollTop,iScrollTop);
+		var iScrollTop = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;		
+	var iScrollLeft = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+	console.log(iScrollTop,iScrollTop);
+</script>
+</html>

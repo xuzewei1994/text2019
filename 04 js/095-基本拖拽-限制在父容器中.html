@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			position: relative;
+			margin: 50px auto;
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oFather = document.getElementById('father');
+	oBox.onmousedown = function(event){	
+		var disX = event.clientX - oBox.offsetLeft;
+		var disY = event.clientY - oBox.offsetTop;
+		document.onmousemove = function(event){
+			var sl = event.clientX - disX;
+			var st = event.clientY - disY;
+			if(sl < 0){
+				sl = 0;
+			}else if(sl > oFather.offsetWidth - oBox.offsetWidth){
+				sl = oFather.offsetWidth - oBox.offsetWidth;
+			}
+			if(st < 0){
+				st = 0;
+			}else if(st > oFather.offsetHeight - oBox.offsetHeight){
+				st = oFather.offsetHeight - oBox.offsetHeight;
+			}
+			oBox.style.left = sl + "px";
+			oBox.style.top = st + "px";
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	};
+</script>
+</html>

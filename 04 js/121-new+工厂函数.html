@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function createPerson(name,age){
+		// var creatPerson = {};
+		// this = creatPerson;
+		this.name = name;
+		this.age = age;
+		this.sayName = function(){
+			console.log("I am " + this.name);
+		}
+		this.sayAge = function(){
+			console.log("I am " +this.age + "years old");
+		}
+	};
+	var person1 = new createPerson("tom",18);
+	person1.sayName();
+	person1.sayAge();
+	console.log(person1);
+</script>
+</html>

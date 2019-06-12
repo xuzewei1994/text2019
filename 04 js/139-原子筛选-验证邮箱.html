@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<button id="btn">检测</button>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		//url解析: str.match(/(\w+):\/\/(\w+)\.([0-9a-z-]+)\.(\w+)/)
+		var str = oText.value;
+		var reg = /^[a-zA-Z0-9_]+@[a-z0-9]+\.[a-z]{2,5}$/;
+		if(reg.test(str)){
+			alert("合法")
+		}else{
+			alert("不合法")
+		}
+	}
+</script>
+</html>

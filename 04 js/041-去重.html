@@ -8,48 +8,62 @@
 	
 </body>
 <script>
-	/*
-	arr = [2,2,"3",3,4,4];
-	console.log("arr = ",arr);
-	function uniqe(arr){
-		var result = [];
-		for(var i = 0;i < arr.length;i++){
-			var isTrue = false;
-			for(var j = 0;j < result.length;j++){
-				if(arr[i] === result[j]){
-					isTrue = true;
-					break;
-				}
-			}
-			if(!isTrue){
-				result.push(arr[i]);
-			}
-		}
-		return result;
-	}
-	var newArr = uniqe(arr);
-	console.log("arr = ",arr);
-	console.log("newArr = ",newArr);
-	*/
+	// arr = [2,2,"3",3,4,4];
+	// console.log("arr = ",arr);
+	// function uniqe(arr){
+	// 	var result = [];
+	// 	for(var i = 0;i < arr.length;i++){
+	// 		var isTrue = false;
+	// 		for(var j = 0;j < result.length;j++){
+	// 			if(arr[i] === result[j]){
+	// 				isTrue = true;
+	// 				break;
+	// 			}
+	// 		}
+	// 		if(!isTrue){
+	// 			result.push(arr[i]);
+	// 		}
+	// 	}
+	// 	return result;
+	// }
+	// var newArr = uniqe(arr);
+	// console.log("arr = ",arr);
+	// console.log("newArr = ",newArr);
 
-	arr = [1,12,13,24,35,23,12,24,13,15,17];
-	function uniqe(arr){
-		var result = [];
-		for(var i = 0;i < arr.length;i++){
-			if(result.indexOf(arr[i],0) == -1){
-				result.push(arr[i]);
-			}
-		}
-		return result;
-	}
-	var newArr = uniqe(arr);
-	console.log("oldarr = ",arr);
-	console.log("newArr = ",newArr);
-	var arr = newArr;
-	arr.sort();
-	arr.sort(function(m,n){
-		return m - n 
-	})
-	console.log("arr = ",arr);
+	// arr = [1,12,13,24,35,23,12,24,13,15,17];
+	// function uniqe(arr){
+	// 	var result = [];
+	// 	for(var i = 0;i < arr.length;i++){
+	// 		if(result.indexOf(arr[i],0) == -1){
+	// 			result.push(arr[i]);
+	// 		}
+	// 	}
+	// 	return result;
+	// }
+	// // var newArr = uniqe(arr);
+	// console.log("oldarr = ",arr);
+	// console.log("newArr = ",newArr);
+	
+	// var arr = newArr;
+	// arr.sort();
+	// arr.sort(function(m,n){
+	// 	return m - n 
+	// })
+	// console.log("arr = ",arr);
 </script>
 </html>
+<script>
+	arr = [1,12,13,24,35,23,12,24,13,15,17];
+	console.log(arr);
+	var index = [];
+	function unique(arr){
+		for(i=0;i<arr.length;i++){
+			if(index.indexOf(arr[i],0) == -1){
+				index.push(arr[i]);
+			}
+		}
+		return index;
+	}
+	var newArr = unique(arr);
+	console.log(newArr);
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script>
+	var iWidth = 0;
+	var iHeight = 0;
+	if(document.compatMode == "css1Compat"){
+		iWidth = document.documentElement.clientWidth;
+		iHeight = document.documentElement.clientHeight;
+	}else{
+		iWidth = document.body.clientWidth;
+		iHeight = document.body.clientHeight;
+	}
+	console.log(iWidth,iHeight);
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		div{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*border-radius: 50%;*/
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script>
+	var box1 = document.getElementById("box1");
+	document.onmousemove = function(event){
+		event = event || window.event;
+		var st = document.body.scrollTop || document.documentElement.scrollTop;
+		var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+		var left = event.clientX;
+		var　top = event.clientY;
+		box1.style.left = left + sl + "px";
+		box1.style.top = top + st + "px";
+	};
+</script>
+</html>
