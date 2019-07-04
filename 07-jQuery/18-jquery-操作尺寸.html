@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			padding: 10px;
+			border: 10px solid #000;
+			background-color: red;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			padding: 20px;
+			border: 20px solid #000;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//设置或获取元素的宽高  jQuery对象.width([val]) jQuery对象.height([val])
+		$('div').width(200);
+
+		//设置或获取元素的宽高,包含内边距 
+		//jQuery对象.innerWidth([val]) jQuery对象.innerHeight([val])
+		$('div').innerWidth(250);
+
+		//设置或获取元素的宽高,包含边框和内边距 
+		//jQuery对象.outerWidth([val]) jQuery对象.outerHeight([val])
+		
+		$('div').outerWidth(300);//类似于IE盒模型
+	})
+</script>
+</html>

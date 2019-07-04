@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+</body>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+
+	$(function(){
+		var arr = [1,25,45,78,56,23];
+
+		//利用arr上的forEach方法来遍历数组
+		arr.forEach(function(value,index){
+			console.log("value,index",value,index);
+		})
+	
+		//利用jquery上的each方法来遍历数组
+		var res = $.each(arr,function(index,value){//$.each(数组,回调函数) 
+			console.log("value,index",value,index);
+		})
+
+		//利用jquery上的each方法也可以遍历伪数组
+		var likeArr = {0:"aa",1:"bb",2:"cc"};
+		console.log(likeArr)
+		var res = $.each(likeArr,function(index,value){
+			console.log("value,index",value,index);
+		})
+		
+		//返回被遍历的数组
+		console.log(res);
+	})
+</script>
+</html>

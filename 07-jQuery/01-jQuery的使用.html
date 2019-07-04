@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	window.jQuery || document.write('<script src="js/jquery-1.12.4.js"><\/script>');
+</script>
+<script>
+	/*
+	//上述jq代码1和jq代码2都会被执行,不会覆盖
+	//不会覆盖的原因是jQuery函数是一个闭包,传递进去的函数都有自己的作用域
+	jQuery(document).ready(function(){
+		console.log("document ready11")
+	});
+	jQuery(document).ready(function(){
+		console.log("document ready22")
+	});
+
+	
+	//jQuery(document).ready()只需页面中的DOM结构加载完毕就执行,可以执行多次
+	//window.onload必须等到页面全部加载完成然后执行,并且只能执行一次
+	window.onload = function(){
+		console.log("window.onload11");
+	}
+	window.onload = function(){
+		console.log("window.onload22");
+	}
+	*/
+
+	/*
+	//$和jQuery是jQuery框架通过window对象暴露出来的全局变量,并且$=jQuery
+	$(document).ready(function(){
+		console.log("document ready11")
+	});
+	$(document).ready(function(){
+		console.log("document ready22")
+	});
+	console.log(jQuery === $);
+	*/
+
+	//简写形式
+	$(function(){
+		console.log("document ready11")
+	})
+	$(function(){
+		console.log("document ready11")
+	})
+</script>
+</html>

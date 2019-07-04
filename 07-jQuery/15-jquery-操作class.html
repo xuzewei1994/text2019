@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			border: 1px solid #000;
+			text-align: center;
+		}
+		.box2{
+			margin-top: 20px;
+		}
+		.box3{
+			background-color: #bfa;
+		}
+	</style>
+</head>
+<body>
+	<button>添加属性</button>
+	<div class="box1 box2 box3">div1</div>
+	<div class="box1 box2">div2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//1、添加 jQuery对象.addClass("class1 class2...")
+		// $('div').attr("class","box1 box2 box3")
+		// $('div').addClass("box1 box2 box3")
+
+		//2、删除 jQuery对象.removeClass("class1 class2...")
+		// $('div').removeClass("box3")
+
+		//3、切换(存在就删除不存在就添加) jQuery对象.toggleClass("class1 class2...")
+		var oBtn = $('button')[0];
+		oBtn.onclick = function(){
+			$('div').toggleClass('box3');
+		}
+
+	})
+</script>
+</html>

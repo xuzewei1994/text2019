@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点击请求</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		//在浏览器端生成script标签,script标签的src指定的链接为另外一个源的地址
+		var script = document.createElement('script');
+		script.src = "http://127.0.0.1:3001/?getData=handleBack";
+		document.body.appendChild(script);
+	}
+	
+	//handleBack();//前台拿到后台传入的数据
+	//所以写一个handleBack的函数用来接收后台的数据
+	function handleBack(data){
+		console.log(data);
+	}
+</script>
+<!-- script标签不涉及跨域，不受同源策略的影响 -->
+<!-- 将参数传到后台然后让后台拿到参数(?getData=handleBack) -->
+<script src="http://127.0.0.1:3001/?getData=handleBack"></script>
+</html>

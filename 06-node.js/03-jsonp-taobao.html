@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<ul id="list">
+		
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oUl = document.getElementById('list');
+
+	function handleBack(data){
+		//数据全部存在data上的result里面
+		//result: Array(10)
+		// 0: (2) ["sd卡", "70443.17898661245"]
+		// 1: (2) ["sd娃娃", "78164.35289310232"]
+		// 2: (2) ["sdeer连衣裙", "4499.857988165681"]
+		// 3: (2) ["sdeer旗舰店官网", "7647.2805019305015"]
+		// 4: (2) ["sdeer圣迪奥女装", "6738.599217986315"]
+		// 5: (2) ["sdeer", "21777.627320490366"]
+		// 6: (2) ["sd娃娃男", "6545.096121416526"]
+		// 7: (2) ["sdeert恤", "6225.598130841122"]
+		// 8: (2) ["sd高达", "14807.265182186235"]
+		// 9: (2) ["sd千大卡", "2543.521573604061"]
+		var data = data.result;
+
+		//每次输入信息之前清空上一次的数据
+		oUl.innerHTML = "";
+		for(var i=0;i<data.length;i++){
+			var oLi = document.createElement('li');
+
+			//拿到每一条数据里面的第0个数据
+			oLi.innerHTML = data[i][0];
+			oUl.appendChild(oLi);
+		}
+	}
+	
+	//在输入框上监听事件
+	oTxt.oninput = function(){
+
+		//获取输入框的信息
+		var val = oTxt.value;
+
+		//在浏览器端生成script标签,script标签的src指定的链接为另外一个源的地址
+		var script = document.createElement('script');
+
+		//将淘宝接收参数信息改为自己使用的handleBack
+		//进行字符串的拼接,达到实时验证的目的(val)
+		script.src = "https://suggest.taobao.com/sug?code=utf-8&q="+val+"&_ksTS=1560768457952_1068&callback=handleBack&k=1&area=c2c&bucketid=20";
+		document.body.appendChild(script);
+	}
+</script>
+</html>

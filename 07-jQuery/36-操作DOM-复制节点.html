@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			text-align: center;
+			line-height: 200px;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<button>复制1</button>
+	<button>复制2</button>
+	<div>div1</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			alert('div click');
+		})
+		//jQuery对象.clone(false|true) 复制一个节点,默认是false不会复制事件,true会复制事件
+		$('button').eq(0).on('click',function(){
+			var $div = $('div').clone(false);
+			$('body').append($div);
+		});
+		$('button').eq(1).on('click',function(){
+			var $div = $('div').clone(true);
+			$('body').append($div);
+		});
+	})
+</script>
+</html>

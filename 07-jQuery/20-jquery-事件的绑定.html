@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin: 10px 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box1">2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//jQuery对象.事件名(function(){});如:$('.btn').click(function(){})
+		$('.box1').click(function(){
+			alert("hello");
+		})
+
+		//jQuery对象.on('事件名',function(){});绑定一个可以多次执行的事件处理函数,
+		//如:$('.btn').on('click',function(){})
+		$('.box1').on('click',function(){
+			alert("我是onclick绑定的")
+		})
+
+		//jQuery对象.on('事件名',function(){});绑定一个一次性的事件处理函数,
+		//如:$('.btn').on('click',function(){})
+		function fn(){
+			alert("fn clcik")//事件只会执行一次
+		}
+		$('.box1').one('click',fn);
+
+		//hover事件 jQuery对象.hover(鼠标移入时执行函数,鼠标移出时执行函数)
+		$('.box1').hover(function(){
+			alert("throw");
+		},function(){
+			alert("out");
+		})
+
+	})
+</script>
+</html>

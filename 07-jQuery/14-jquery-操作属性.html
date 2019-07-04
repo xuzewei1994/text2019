@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="test1" value="aa">
+	<input type="text" name="test2" value="bb">
+	<input type="checkbox" checked>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//1、获取 jQuery对象.attr("属性节点名称") jQuery对象.prop("属性节点名称")
+		console.log($('input').attr('name'));
+		console.log($('input').prop('name'));
+
+		//2、设置 jQuery对象.attr("属性节点名称","值1 值2...") 
+		//		 jQuery对象.prop("属性节点名称","值1 值2")
+
+		console.log($('input').eq(2).attr('checked'));//checked
+		console.log($('input').eq(2).prop('checked'));//true
+
+		//3、删除 jQuery对象.removeAttr("属性节点名称") jQuery对象.removeProp("属性节点名称")
+		console.log($('input').eq(2).removeAttr('checked'));
+		console.log($('input').eq(2).removeProp('checked'));
+	})
+</script>
+</html>

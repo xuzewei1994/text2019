@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			position: relative;
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			overflow: auto;
+		}
+		.son{
+			position: absolute;
+			width: 2000px;
+			height: 2000px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">点击获取滚动条距离</button>
+	<div class="father">
+	<div class="son"></div>	
+	</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//设置或获取元素相对于body的偏移位  jQuery对象.offset([对象]) 
+		//
+		console.log($('.son').offset());//相对于body
+		// $('.son').offset({top:530,left:500})//相对于body
+
+		//jQuery对象.position()
+		//获取元素相对于父级定位元素的偏移位,返回一个包含偏移值对象
+		//
+		console.log($('.son').position());//只能获取，不能修改属性
+
+		//jQuery对象.scrollTop([val])  jQuery对象.scrollLeft([val])
+		//设置或获取元素垂直滚动距离 设置或获取元素水平滚动距离
+		var oBtn = $('#btn')[0];
+		oBtn.onclick = function(){
+			console.log($('.father').scrollTop())
+			console.log($('.father').scrollLeft())
+		}
+		
+	})
+</script>
+</html>

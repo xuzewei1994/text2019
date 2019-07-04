@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 10px 0; 
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<div>1</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//jQuery对象.animate(需要动画的属性对象,时长,回调)
+		$('button').on('click',function(){
+			$('div').animate({
+			width:"300px",
+			height:300,
+			opacity:1
+			},1000,function(){
+				console.log("animation done")
+			})
+		})
+		
+		//列队动画  多个动画链式调用,后面的动画会等待前面的动画执行完毕
+		$('button').on('click',function(){
+			$('div').animate({width:300},1000,function(){
+				console.log("width done");
+			}).animate({height:300},1000,function(){
+				console.log("height done");
+			}).animate({opacity:1},1000,function(){
+				console.log("opacity done");
+			})
+		})
+	})
+</script>
+</html>

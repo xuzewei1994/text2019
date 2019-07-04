@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>我是内容</div>
+	<div>
+		我是div
+		<p>我是段落</p>
+	</div>
+	<button id="btn">点击</button>
+	<input type="text" id="txt" value="">
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+		//jQuery对象.html([val]) 设置或者获取元素中的HTML,相当于innerHTML
+		console.log($('div').eq(1).html());//我是div	<p>我是段落</p>
+		console.log($('div').html("<h2>我是标题</h2>"));
+
+		//jQuery对象.text([val]) 设置或者获取元素中的HTML,相当于innerText
+		console.log($('div').text());//我是标题我是标题
+		console.log($('div').text("<h2>我是标题</h2>"));
+
+		//jQuery对象.val([val])  设置或获取元素value属性的值
+		var oText = document.getElementById('txt');
+		var oBtn = document.getElementById('btn');
+		oBtn.onclick = function(){
+			console.log($(oText).val(1231));
+		}
+
+	})
+</script>
+</html>		

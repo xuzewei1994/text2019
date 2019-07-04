@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			margin-top: 10px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>生成</button>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+
+		$('button').on('click',function(){
+			var oLi = $('<li>我是新生成的li</li>')[0];
+			$('ul')[0].appendChild(oLi);
+		})
+
+		//方式一:$('父元素选择器').delegate('子元素选择器','事件名', 回调函数)
+		$('ul').delegate('li','click',function(){
+			alert('li click')
+		})
+
+		//方式二:$('父元素选择器').on('事件名','子元素选择器', 回调函数)
+		$('ul').on('click','li',function(){
+			alert('li click')
+		})
+
+		//*回调函数中的this是触发事件的DOM元素,及具体的某个子DOM元素
+		
+		//*页面中动态增加的元素需要通过事件委托的方式来添加事件
+	})
+</script>
+</html>

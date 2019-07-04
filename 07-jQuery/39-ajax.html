@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>get封装</button>
+	<button>post封装</button>
+	<button>获取JSON数据</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).on('click',function(){
+			$.get("37-data.json",function(){
+				name:"tom",
+				age:18
+			},"json");
+		})
+	})
+</script>
+</html>

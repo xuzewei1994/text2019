@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 150px;
+			height: 150px;
+			border: 1px solid #000;
+			font-size: 20px;
+			text-align: center;
+			line-height: 150px;
+			background-color: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<button>设置样式</button>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$.prototype.setColor = function(options){
+			var DEFAULTS = {color:"blue"};
+			options = $.extend({},DEFAULTS,options);
+			return this.each(function(index,element){
+				this.style.color = options.color;
+			})
+		}
+	})
+</script>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			// $('div').setColor({color:"red"});
+			$('div').setColor({color:"red"}).animate({width:500},2000,'linear');
+		})
+	})
+</script>
+</html>

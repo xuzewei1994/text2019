@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="div1">1</div>
+	<div class="div2">2</div>
+	<div class="div3">3</div>
+	<div class="div4">4</div>
+	<div class="div5" data-name="tom">5</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//jQuery对象.index(),获取当前jQuery对象的索引
+
+		//1.什么都不传则返回对象中第一个元素的下标
+		console.log($('div').index());
+
+		//2.传入DOM节点则返回对应元素的下标
+		console.log($('div').index(document.querySelector('.div2')));
+
+		//3.传入jquery对象则返回对应下标
+		console.log($('div').index($('.div4')));
+
+		//jQuery对象.each(function(index,element){}),遍历jQuery对象中的DOM元素,注意回调函数中的this是DOM对象
+		$('div').each(function(index,element){
+			console.log("index,element",index,element);
+		})
+
+		//jQuery对象.data([key],[value]) 
+		$('.div2').data("kuazhu","kuazhu-test");
+
+		//当参数只有一个key的时候,为读取该jQuery对象对应DOM中存储的key对应的值
+		console.log($('.div2').data("kuazhu"));
+
+		//当参数为两个时,为该jQuery对象对应的DOM中存储key-value键值对的数据
+		console.log($('.div2').data("kuazhu","kuazhu-test"));
+
+		//可以自己主动去存数据 data-name="tom"
+		console.log($('.div5').data("name"))//tom
+
+		//jQuery对象.is(选择器) ,检测jQuery对象中是否有匹配元素
+		console.log($('div').is('.div5'))//true
+	})
+</script>
+</html>

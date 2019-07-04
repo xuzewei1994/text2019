@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 10px 0; 
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<button>但如道值</button>
+	<div>1</div>
+	<div>2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// jQuery对象.fadeIn(时长,回调) 
+		$('button').eq(0).on('click',function(){
+			$('div').fadeIn(1000,function(){
+				alert('fadeIn...')
+			})
+		})
+
+		//jQuery对象.fadeOut(时长,回调) 
+		$('button').eq(1).on('click',function(){
+			$('div').fadeOut(1000,function(){
+				alert('fadeOut...')
+			})
+		})
+
+		//jQuery对象.fadeToggle(时长,回调) 
+		$('button').eq(2).on('click',function(){
+			$('div').fadeToggle(1000,function(){
+				alert('shown an hidden...')
+			})
+		})
+
+		// jQuery对象.fadeTo(时长,淡入到值,回调)
+		$('button').eq(3).on('click',function(){
+			$('div').fadeTo(1000,0.5,function(){
+				alert('shown an hidden...')
+			})
+		})
+	})
+</script>
+</html>

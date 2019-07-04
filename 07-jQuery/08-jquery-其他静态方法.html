@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//$.trim(str) 去除字符串两边的空格并返回
+		var str = "  ab c  ";
+		console.log(str);
+		console.log($.trim(str));
+
+		//$.isWindow(arg)  判断参数对象是不是window对象
+		console.log($.isWindow(window));
+		console.log($.isWindow({}));
+
+		//$.isArray(arg) 判断参数对象是不是真数组
+		console.log($.isArray([1,2,3]));
+		console.log($.isArray({0:"aa",1:"bb",2:"cc",length:3}));
+
+		//$.isFunction(arg)  判断参数对象是不是函数
+		console.log($.isFunction(function(){}));
+		console.log($.isFunction({}));
+
+		//$.extend()  $.extend(obj1, obj2);//合并 obj1 和 obj2,修改并返回 obj1。
+		var obj1 = {name:"tom",age:18};
+		var obj2 = {name:"leo"};
+		var res = $.extend(obj1,obj2);
+		console.log(res);//{name: "leo", age: 18}
+
+		console.log(obj1);//{name: "leo", age: 18}
+
+		console.log(obj2);//{name: "leo"}
+
+		var res = $.extend({},obj1,obj2);//如果不希望修改对象的内容在对象前边插入一个空对象
+		console.log(res);
+
+		//$.proxy(函数,内部this) 改变函数的内部this指向
+		function show(){
+			console.log(this);
+		}
+		show();//window
+		var res = $.proxy(show,{name:"tom",sex:"famle"});
+		// console.log(res);
+	})
+</script>
+</html>

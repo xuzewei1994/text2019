@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>观察者模式-发布作业</title>
 </head>
 <body>
 	
@@ -11,34 +11,40 @@
 	(function(w){
 		function Teacher(name){
 			this.name = name;
+			//定义一个数组存储学生
+			this.students = [];
 		}
 		Teacher.prototype = {
 			constructor:Teacher,
 			register:function(student){
-				this.students.push(student);
+				this.students.push(student);//将每个学生添加进数组
 			},
-			publish:function(student){
-				for(var i=0;i<this.students.length;i++){
-					this.students[i].listen(msg);
+			publish:function(msg){
+				for(var i=0;i<this.students.length;i++){//循环遍历每一个学生
+					this.students[i].listen(msg);//每一个学生接收到老师发布的消息
 				}
 			}
 		}
 		w.Teacher = Teacher;
 	})(window);
 	(function(w){
-		function Student(name,teacher){
+		function Student(name,teacher){//接收老师的实例(t1)
 			this.name = name;
-			teacher.register(this);
+			teacher.register(this);//this指每个学生(Student)
 		}
 		Student.prototype = {
 			constructor:Student,
 			listen:function(msg){
-				console.log(this.name + " got msg" + msg);
+				console.log(this.name + " got msg " + msg);
 			}
 		}
 		w.Student = Student;
 	})(window);
-	var t1 = new Teacher("teacherZhang");
-	var s1 = new Student("tom",t1);
+	var t1 = new Teacher('teacherZhang');
+	var s1 = new Student('tom',t1);//将老师的实例传入学生中
+	var s2 = new Student('leo',t1);
+	var s3 = new Student('anmy',t1);
+	console.log(t1);
+	t1.publish("everyone do something");//老师发布消息
 </script>
 </html>

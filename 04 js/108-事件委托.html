@@ -18,17 +18,24 @@
 <script>
 	var oBtn = document.getElementById('btn');
 	var oUl = document.getElementById('list');
+
 	oBtn.onclick = function(){
+
+		//创建li
 		var oLi = document.createElement('li');
 		oLi.innerHTML = "new li";
 		oUl.appendChild(oLi);
+
+		//创建a
 		var oA = document.createElement('a');
 		oA.href = "#";
 		oA.className = "del";
 		oA.innerHTML = "删除";
 		oLi.appendChild(oA);
 	}
+
 	oUl.onclick = function(ev){
+		//事件委托
 		var oTarget = ev.target;
 		if(oTarget.className == "del"){
 			oUl.removeChild(oTarget.parentNode);

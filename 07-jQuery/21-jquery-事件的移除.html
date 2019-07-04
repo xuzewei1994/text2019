@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin: 10px 50px;
+		}
+	</style>
+</head>
+<body>
+	<button>点击移除事件</button>
+	<div class="box1">1</div>
+	<div class="box1">2</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('.box1').click(function(){
+			alert("hello");
+		})
+		$('.box1').on('click',function(){
+			alert("我是onclick绑定的")
+		})
+		function fn(){
+			alert("fn clcik")//事件只会执行一次
+		}
+		$('.box1').on('click',fn);
+
+		$('.box1').on('mouseover',function(){
+			alert("mouseover");
+		})
+
+
+		//jQuery对象.off() 移除所有的事件
+		// $('div').off();
+
+		//jQuery对象.off('事件名') 移除所有该事件名对应的事件
+		$('button').on('click',function(){
+			$('div').off('mouseover');
+		})
+		
+		//jQuery对象.off('事件名',函数名) 移除事件名对应的函数名的相关事件
+		$('button').on('click',function(){
+			$('div').off('click',fn);
+		})
+
+	})
+</script>
+</html>

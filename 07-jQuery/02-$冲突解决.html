@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(w){
+		function $(){//定义一个以$命名的构造函数
+			console.log(11);
+		}
+		w.$ = $;
+	})(window);
+
+</script>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+
+	//1、在使用jQuery前释放jQuery的$使用权,用jQuery来代替$
+	
+	jQuery.noConflict();//noConflict:无冲突 表示现在jQuery框架没有$的使用权。
+
+	console.log("$ : ",$);
+
+	console.log("jQuery : ",jQuery);
+
+	//2、在使用jQuery前释放jQuery的$使用权的同时自定义自己的符号,用自定义符号来代替$
+	var kz = jQuery.noConflict();
+	kz(function(){
+		console.log(kz);
+	})
+</script>
+</html>

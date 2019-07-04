@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [4,53,65,21,55,22,67,43];
+	console.log(arr);
+	//遍历
+	arr.forEach(function(value,index){
+	    console.log(value);
+	})
+	//映射
+	var newArr = arr.map(function(value,index){
+		return value*1
+	})
+	console.log(newArr);
+	//过滤
+	var newArr = arr.filter(function(value,index){
+		return value >10;
+	})
+	console.log(newArr);
+	//全真判断
+	var isTrue = arr.every(function(value,index){
+		return value > 10;
+	})
+	console.log(isTrue);
+	//有真判断
+	var isTrue = arr.some(function(value,index){
+		return value > 10;
+	})
+	console.log(isTrue);
+</script>
+</html>

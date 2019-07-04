@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box1">1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+</body>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+	//jQuery对象是一个伪数组
+	$(function(){
+		var oBox1 = document.getElementById('box1');
+
+		console.log($('div'));
+		//jQuery.fn.init(10) [div#box1, div, div, div, div, div, div, div, div, div, prevObject: jQuery.fn.init(1), context: document, selector: "div"]
+
+		//dom => jquery{}
+		console.log($('oBox1'));//$(DOM对象),返回包含了DOM对象的jQuery对象
+
+		//jquery{} =>dom
+		console.log($('div')[0]);//jQuery对象[index],获取对应下标的DOM元素
+		console.log($('div').get(0));//jQuery对象.get(index),获取对应下标的DOM元素
+	})
+</script>
+</html>

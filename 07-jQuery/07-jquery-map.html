@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+</body>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+
+	$(function(){
+		var arr = [1,25,45,78,56,23];
+
+		//利用arr上的map方法来映射数组
+		var res = arr.map(function(value,index){
+			console.log("value,index",value,index);
+			return value*10;
+		})
+		console.log(res);
+		
+		//利用jquery上的map方法来映射数组
+		var res = $.map(arr,function(value,index){//$.map(数组,回调函数)
+			console.log("value,index",value,index);
+		})
+
+		//利用jquery上的map方法也可以映射伪数组并返回一个真数组
+		var likeArr = {0:"aa",1:"bb",2:"cc"};
+		console.log(likeArr)
+		var res = $.map(likeArr,function(value,index){
+			console.log("value,index",value,index);
+			return value;
+		})
+		console.log(res);//返回被映射的数组
+
+		var oBox = document.getElementsByTagName('div');
+		var res = $.map(oBox,function(value,index){
+			console.log("value,index",value,index);
+			return value;
+		})
+		console.log(res);
+	})
+
+</script>
+</html>

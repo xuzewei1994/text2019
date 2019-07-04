@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="https://www.kuazhu.com" target="_blink">
+		<input type="text" name="username">
+		<input type="submit" value="提交">
+	</form>
+	<a href="https://www.kuazhu.com/">
+		点击链接
+		<p>点我</p>
+	</a>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		
+		$('input').eq(1).on('click',function(){
+			alert('input click')
+		})
+
+		//jQuery对象.trigger('事件名') 不阻止事件冒泡和默认行为的事件触发
+		// $('input').eq(1).trigger('click');
+		
+		// jQuery对象.triggerHandler('事件名') 阻止事件冒泡和默认行为的事件触发
+		$('body').on('click',function(){
+			alert('body click');
+		})
+		$('input').eq(1).triggerHandler('click');
+		
+	//注意a标签用trigger不阻止事件冒泡,但是会阻止默认行为,如果需要发生默认行为需要触发a标签的子元素
+		$('a').triggerHandler('click');
+		
+	})
+</script>
+</html>

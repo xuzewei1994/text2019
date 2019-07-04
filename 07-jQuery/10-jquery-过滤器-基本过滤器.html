@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="div1">1</div>
+	<div class="div2">2</div>
+	<div class="div3">3</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		
+		//$('选择器:eq(index)')  选择索引对应的DOM元素,索引可以是负数
+		console.log($('div:eq(1)'));//选择div2
+	})
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 10px 0; 
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div>1</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//jQuery对象.slideDown(时长,回调) 
+		$('button').eq(0).on('click',function(){
+			$('div').slideDown(1000,function(){
+				alert('slideDown...')
+			})
+		})
+
+		//jQuery对象.slideUp(时长,回调)
+		$('button').eq(1).on('click',function(){
+			$('div').slideUp(1000,function(){
+				alert('slideUp...')
+			})
+		})
+
+		//jQuery对象.slideToggle(时长,回调)
+		$('button').eq(2).on('click',function(){
+			$('div').slideToggle(1000,function(){
+				alert('slideDown an slideUp...')
+			})
+		})
+	})
+</script>
+</html>

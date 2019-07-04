@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<button>替换1</button>
+	<button>替换2</button>
+	<button>替换3</button>
+	<div>
+		<p>我是段落</p>
+	</div>
+	<div>
+		<p>我是段落</p>
+	</div>
+	<div>
+		<p>我是段落</p>
+	</div>
+	<div>
+		<p>我是段落</p>
+	</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).on('click',function(){
+		//jQuery对象1.replaceWith(jQuery对象2),用jQuery对象2中的节点替换jQuery对象1中的节点
+			var $h2 = $('<h2>我是标题</h2>');
+			$('div').replaceWith($h2);
+		});
+		$('button').eq(1).on('click',function(){
+		//jQuery对象1.replaceWith(HTML代码),用jQuery对象2中的节点替换jQuery对象1中的节点
+			var $h2 = $('<h3>我是标题</h3>');
+			$('div').replaceWith($h2);
+		});
+		$('button').eq(2).on('click',function(){
+			//jQuery对象1.replaceAll('选择器'),用jQuery对象1中节点替换掉所有选中的节点
+			var $h2 = $('<h2>我是标题</h2>');
+			$h2.replaceAll('div');
+		});
+	})
+</script>
+</html>

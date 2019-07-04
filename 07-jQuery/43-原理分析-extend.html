@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function kQuery(){
+		
+	}
+	kQuery.propotype.extend = function(options){
+		for(var key in options){
+			kQuery.prototype[key] = options[key];
+		}
+	}
+
+	kQuery.prototype.extend({
+		test:function(){
+			console.log('test1111')
+		}
+	});
+	console.log(kQuery.prototype)
+</script>
+<script>
+	var k1 = new kQuery();
+</script>
+</html>

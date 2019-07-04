@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="div1">1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//jQuery对象.eq(index) 选择索引对应的DOM元素
+		console.log($('div').eq(2));//3
+
+		//jQuery对象.siblings() jQuery对象中包含元素之外的兄弟元素
+		console.log($('.div1').siblings());
+	})
+</script>
+</html>

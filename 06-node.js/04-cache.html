@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="04.cache.css" />
+</head>
+<body>
+	<button id="btn">点击请求</button>
+	<p>请求数据</p>
+	<img src="04-bird.jpg" alt="">
+</body>
+<script>
+	function handleBack(data){
+	}
+
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		var script = document.createElement('script');
+		script.src = "http://127.0.0.1:3000/?getData=handleBack";
+		document.body.appendChild('script');
+	}	
+</script>
+<script src="04-cache-3000.js"></script>
+</html>

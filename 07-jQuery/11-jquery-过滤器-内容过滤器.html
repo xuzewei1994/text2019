@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div></div>
+	<div>我是div</div>
+	<div><p>我是p标签</p></div>
+	<div><span>我是span</span></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//1、$('选择器:empty') 选择的元素中没有文本内容和子元素的
+		console.log($('div:empty'));
+
+		//2、$('选择器:parent') 选择的元素中有文本内容或者子元素的
+		console.log($('div:parent'));
+
+		//3、$('选择器:contains(文本内容)') 选择的元素中包含有指定内容的
+		console.log($('div:contains(标签)'));
+
+		//4、$('选择器:has(选择器)') 选择的元素中有指定的选择器的
+		console.log($('div:has(p)'));
+
+	})
+</script>
+</html>
