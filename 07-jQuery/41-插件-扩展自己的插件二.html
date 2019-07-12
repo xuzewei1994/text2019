@@ -15,7 +15,6 @@
 			font-size: 20px;
 			text-align: center;
 			line-height: 150px;
-			background-color: #ff6700;
 		}
 	</style>
 </head>
@@ -29,22 +28,18 @@
 	$(function(){
 		$.fn.extend({
 			setColor:function(options){
-				var DEFAULTS = {color:"blue"};
+				var DEFAULTS = {background:"blue"};
 				options = $.extend({},DEFAULTS,options);
-				return this.each(function(index,element){
-					this.style.color = options.color;
+				return this.each(function(index,elem){
+					this.style.background = options.background;
 				})
 			}
 		})
-		
 	})
 </script>
 <script>
-	$(function(){
-		$('button').on('click',function(){
-			// $('div').setColor({color:"red"});
-			$('div').setColor({color:"red"}).animate({width:500},2000,'linear');
-		})
+	$('button').on('click',function(){
+		$('div').setColor({background:"yellow"}).animate({width:400});
 	})
 </script>
 </html>
