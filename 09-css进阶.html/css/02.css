@@ -1,0 +1,30 @@
+ul {
+  width: 600px;
+  margin: 100 auto;
+  list-style: none;
+}
+ul li {
+  width: 100%;
+  line-height: 30px;
+}
+ul li span {
+  float: left;
+}
+ul li a {
+  float: right;
+}
+ul li:hover {
+  background-color: #ccc;
+}
+.box5 {
+  font-size: 30px;
+}
+.box6 {
+  font-size: calc(10px + 30px);
+}
+.box7 {
+  font-size: 30px !important;
+}
+.box8 {
+  width: 2px;
+}

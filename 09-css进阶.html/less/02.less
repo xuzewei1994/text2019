@@ -1,0 +1,45 @@
+//嵌套
+ul{
+	width: 600px;
+	margin: 100 auto;
+	list-style: none;
+	li{
+		width: 100%;
+		line-height: 30px;
+		span{
+			float: left;
+		}
+		a{
+			float: right;
+		}
+		//在嵌套中&代表父元素
+		&:hover{
+			background-color: #ccc;
+		}
+	}
+}
+
+.calc-fs(@f){
+	font-size: @f + 10px;
+}
+.box5{
+	.calc-fs(20px);
+}
+
+//避免编译 属性:~'css的值'
+.box6{
+	font-size: ~'calc(10px + 30px)';
+}
+
+//提高优先级
+.box7{
+	.box5 !important;
+}
+
+.set(@attr,@val){
+    @{attr}:unit(@val/10,px);
+}
+
+.box8{
+	.set(width,20px);
+}

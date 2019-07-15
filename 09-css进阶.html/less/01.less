@@ -1,0 +1,76 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+@c:#bfa;
+@w:300px;
+@h:300px;
+
+.div{
+	margin-top: 20px;
+}
+.box1{
+	width: @w;
+	height: @h;
+	background-color: @c;
+}
+
+.box2{
+	font-size: 16px;
+}
+
+border-r{
+	-ms-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius: 10px;
+}
+
+
+//匹配模式 选择符合条件的混合模式,根据传入的参数来决定使用哪个混合
+//@_代表任意匹配
+.triangle(@_,@w,@c){
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-style: solid;
+}
+.triangle(bottom,@w,@c){
+	border-width: @w;
+	border-color: @c transparent transparent transparent;
+}
+.triangle(left,@w,@c){
+	border-width: @w;
+	border-color: transparent @c transparent transparent;
+}
+.triangle(top,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent @c transparent;
+}
+.triangle(right,@w,@c){
+	border-width: @w;
+	border-color: transparent transparent transparent @c;
+}
+.box4{
+	.triangle(left,40px,#ccc)
+}
+
+
+//嵌套
+ul{
+	width: 600px;
+	margin: 100 auto;
+	list-style: none;
+	li{
+		width: 100%;
+		line-height: 30px;
+		span{
+			float: left;
+		}
+		a{
+			float: right;
+		}
+	}
+}
