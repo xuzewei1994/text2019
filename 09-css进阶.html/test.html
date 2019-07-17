@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//封装cookie相关函数
+	function setCookie(key,val,iDate){
+		var oDate = new Date();
+		oDate.setDate(oDate.getDate()+iDate);
+		document.cookie = key+'='+val+';Expires='+oDate;
+	}
+	setCookie('username','tom',14);
+	setCookie('age',18,14);
+
+	//获取cookie
+	function getCookie(key){
+		var str = document.cookie;
+		var arr1 = str.split(';');
+		for(var i=0;i<arr1.length;i++){
+			var arr2 = arr1[i].split('=');
+			for(var j=0;j<arr2.length;j++){
+				if(key.trim() == arr2[0].trim()){
+					return arr2[1];
+					break;
+				}
+			}
+		}
+	}
+	console.log(getCookie('age'));
+
+	//删除cookie
+	function removeCookie(key){
+		setCookie(key,false,-1);
+	}
+	removeCookie('age');
+
+	//cookie的特点
+	1.cookie的大小限制在4k
+	2.cookie会存在于请求头中
+	3.主域名中的cookie会在子域名中存在
+</script>
+</html>

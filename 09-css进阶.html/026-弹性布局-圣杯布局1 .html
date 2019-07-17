@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-弹性布局-圣杯布局 .html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			background-color: tomato;
+		}
+		nav{
+			background-color: blue;
+		}
+		aside{
+			background-color: yellow;
+		}
+		footer{
+			background-color: pink;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+		header,footer{
+			flex: 0 0 10vh;
+		}
+		section{
+			display: flex;
+			flex-grow: 1;
+			flex-direction: row;
+		}
+		nav,aside{
+			flex: 0 0 10vh;
+		}
+		.main{
+			flex-grow: 1;
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<section>
+		<nav>nav</nav>
+		<div class="main">main</div>
+		<aside>aside</aside>
+	</section>
+	<footer></footer>
+</body>
+</html>
