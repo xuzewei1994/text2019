@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	// console.log(s1)//Symbol(Tom)
+	// console.log(s2)//Symbol(Tom)
+	// console.log(s1 == s2)//false
+
+	let s1 = Symbol('Tom')
+	let s2 = Symbol('Tom')
+
+	let obj = {
+		name:'Peter',
+		[s1]:'Tom',
+		[s2]:'Amy'
+	}
+
+	console.log(obj)//{name: "Peter", Symbol(Tom): "Tom", Symbol(Tom): "Amy"}
+	console.log(obj[s1])//Tom
+	console.log(obj[s2])//Amy
+
+	// for(let key in obj){
+	// 	console.log(key)
+	// }
+	let keys = Reflect.ownKeys(obj)
+	for(let key in obj){
+		console.log(key[keys])
+	}
+</script>
+</html>

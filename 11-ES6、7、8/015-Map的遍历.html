@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	const m = new Map()
+	let obj1 = {id:1001}
+	let obj2 = {id:1002}
+	m.set('name','Tom')
+	m.set(obj1,'Hello')
+	m.set(obj2,'你好')
+	for(let key of m.keys()){
+		console.log('key:',key)
+		// key: name
+		// key: {id: 1001}
+		// key: {id: 1002}
+	}
+	for(let value of m.values()){
+		console.log('value:',value)
+		// value: Tom
+		// value: Hello
+		// value: 你好
+	}
+	for(let entrie of m.entries()){
+		console.log('entrie:',entrie)
+		// entrie: (2) ["name", "Tom"]
+		// entrie: (2) [{…}, "Hello"]
+		// entrie: (2) [{…}, "你好"]
+	}
+	m.forEach(function(value,key){
+		console.log(value,key)
+		// Tom name
+		// Hello {id: 1001}
+		// 你好 {id: 1002}
+	})
+</script>
+</html>

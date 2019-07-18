@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//1.indexOf方法
+	let arr = [11,22,11,33,22,66]
+	function uniqueArray1(arr){
+		let result = []
+		for(let i=0,len=arr.length;i<len;i++){
+			if(result.indexOf(arr[i]) == -1){
+				result.push(arr[i])
+			}
+		}
+		return result
+	}
+	let arr1 = uniqueArray1(arr)
+	console.log('arr:',arr)
+	console.log('arr1:',arr1)
+	*/
+
+	/*
+	//2.对象属性唯一
+	let arr = [11,22,11,33,22,66]
+	function uniqueArray2(arr){
+		let result = []
+		let obj = {}
+		for(let i=0,len=arr.length;i<len;i++){
+			obj[arr[i]] = ''
+		}
+		for(let key in obj){
+			result.push(key*1)
+		}
+
+		return result
+	}
+	let arr2 = uniqueArray2(arr)
+	console.log('arr:',arr)
+	console.log('arr2:',arr2)
+	*/
+
+	//3.Set方法
+	let arr = [11,22,11,33,22,66]
+	function uniqueArray3(arr){
+		const s = new Set(arr)
+		return [...s]
+	}
+	let arr3 = uniqueArray3(arr)
+	console.log('arr:',arr)//arr: (6) [11, 22, 11, 33, 22, 66]
+	console.log('arr3:',arr3)//arr3: (4) [11, 22, 33, 66]
+</script>
+</html>

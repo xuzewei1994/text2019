@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	const s = new Set()
+
+	console.log(s)
+	*/
+
+	/*
+	const arr = [11,22,33]
+	const s = new Set(arr)
+	console.log(s)//Set(3) {11, 22, 33}
+	*/
+
+	
+	//添加
+	const s = new Set()
+	s.add(1)
+	s.add(2)
+	console.log(s)//Set(1) {1}
+	console.log(s.size)//2
+	
+
+	
+	//删除
+	const s = new Set()
+	s.add(1)
+	s.add(2)
+	console.log(s.delete(1))//true
+	console.log(s)//Set(1) {2}
+	console.log(s.size)//1
+	
+
+	
+	//判断
+	const s = new Set()
+	s.add(1)
+	s.add(2)
+	s.add(3)
+	s.add(4)
+	console.log(s.delete(1))//true
+	console.log(s.has(1))//false
+	console.log(s.size)//3
+	
+
+	//清除所有
+	const s = new Set()
+	s.add(1)
+	s.add(2)
+	s.add(3)
+	s.add(4)
+	s.clear()//true
+	console.log(s.size)//0
+
+
+
+
+
+
+</script>
+</html>

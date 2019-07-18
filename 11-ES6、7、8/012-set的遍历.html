@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const s = new Set([11,22,33,44])
+	console.log(s)
+	for(let key of s.keys()){
+		console.log('key:',key)
+		// key: 11
+		// key: 22
+		// key: 33
+		// key: 44
+	}
+	for(let value of s.values()){
+		console.log('value:',value)
+		// value: 11
+		// value: 22
+		// value: 33
+		// value: 44
+		
+	}
+	for(let entrie of s.entries()){
+		console.log('entrie:',entrie)
+		//entrie: (2) [11, 11]
+		//entrie: (2) [22, 22]
+		//entrie: (2) [33, 33]
+		//entrie: (2) [44, 44]
+		
+	}
+	s.forEach(function(value,key){
+		console.log('value='+value+':'+'key='+key)
+		//value=11:key=11
+		//value=22:key=22
+		//value=33:key=33
+		//value=44:key=44
+	})
+</script>
+</html>

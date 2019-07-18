@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点我</button>
+</body>
+<script>
+	var btn = document.getElementById('btn');
+	var data = ['tom','anmy','peter'];
+	btn.onclick = function(){
+		var html = ''
+		html += '<ul>'
+		for(let i = 0;i<data.length;i++){
+			html += `<li>${data[i]}</li>`
+		}
+		html += '</ul>'
+		document.body.innerHTML = html
+	}
+</script>
+</html>
