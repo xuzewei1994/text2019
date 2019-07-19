@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	const promise = new Promise((resolve,reject)=>{
+		//只有异步操作的结果,可以决定当前是哪一种状态,任何其他操作都无法改变这个状态
+		setTimeout(()=>{
+			resolve('ok')
+			// reject('error')
+		},0)
+	})
+
+	promise
+	.then(data=>{
+		console.log('success data',data)
+	})
+	.catch(err=>{
+		console.log('error data',err)
+	})
+</script>
+</html>

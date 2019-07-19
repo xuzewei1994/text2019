@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	//箭头函数没有原型对象,所以不能用箭头函数来定义构造函数
+	const Person = (name,age)=>{
+		this.name = name
+		this.age = age
+	}
+	const p = new Person//Person is not a constructor
+
+	function show(){
+		console.log(arguments)
+	}
+	show(1,2)
+
+	//箭头函数中没有arguments
+	const show = (n1,n2)=>{
+		console.log(arguments)//arguments is not defined
+	}
+	show(1,2)
+
+
+	//如果定义有名称的箭头函数,需要把箭头函数赋值给变量,所以箭头函数不存在声明的提升
+	show()
+	const show = ()=>{
+		console.log(1)// Cannot access 'show' before initialization
+	}
+
+</script>
+</html>

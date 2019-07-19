@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	//function 定义的函数
+	function Timer(id){
+		this.id = id
+		//延迟函数会在100毫秒后由window对象来调用,所以里面的this是window对象
+		setTimeout(function(){
+			console.log(this,this.id)//window 33
+		},100)
+	}
+	var id = 33
+	const t = new Timer(55)
+	*/
+
+
+	//箭头函数
+	function Timer(id){
+		this.id = id
+		//箭头函数导致this总是指向函数定义生效时所在的对象
+		//延迟函数中匿名函数在定义的时候是属于Timer的实例对象,所以里面的this就是Timer对象
+		setTimeout(()=>{
+			console.log(this,this.id)//Timer 55
+		},100)
+	}
+
+	new  Timer(55)
+</script>
+</html>

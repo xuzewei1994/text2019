@@ -24,12 +24,12 @@
 	show('AMY',99)
 	*/
 
-	/*
-	function show(name='Tom',age){
+
+	function show(name='Tom',age=18){
 		console.log(name,age)
 	}
-	show()
-	*/
+	show()//Tom 18
+
 
 	/*
 	let i =1
@@ -38,12 +38,13 @@
 	}
 	show()//2
 	i=5
-	show()
+	show()//6
 	*/
 
-	function request(url,{method='get',data='id=000'}={}){
-		console.log(url,method.data)
-	}
-	request('http://api.kuazhu.com',{method:'post',data:'id=123'})
+	 // function show2(url,{method="GET",body="name=Tom"} = {}){
+  //       console.log(method,body);
+  //   }
+  //   show2();//GET name=Tom
+  //   show2('http://kuazhu.com');//GET name=Tom
 </script>
 </html>

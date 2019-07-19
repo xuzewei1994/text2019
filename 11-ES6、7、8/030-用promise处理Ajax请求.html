@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	/*
+	//1.Ajax
+	$.get('https://api.github.com/users/kuazhu',(data)=>{
+		$.get(data.followers_url,(data)=>{
+			$.get(data[0].followers_url,(data)=>{
+				console.log(data)
+			})
+		})
+	})
+	console.log('after get ajax data')
+	*/
+
+	//用promise处理Ajax
+	//1.需要一个生成promise的函数
+	const getDataPromise = (url)=>new Promise((resolve,reject)=>{
+		//处理异步请求(ajax)
+		$.ajax({
+			url:url,
+			success:(data)=>{
+				resolve(data)
+			},
+			error:(jqXhr,statusMsg)=>{
+				reject(statusMsg)
+			}
+		})
+	})
+	//2.用函数生成promise
+	getDataPromise('https://api.github.com/users/kuazhu')
+	.then(data=>{
+		return getDataPromise(data.followers_url)
+	})
+	.then(data=>{
+		return getDataPromise(data[0].followers_url)
+	})
+	.then(data=>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+</script>
+</html>

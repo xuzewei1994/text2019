@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//当new Promise时，Promise里面的回调函数会立即执行
+	const promise = new Promise((resolve,reject)=>{
+		console.log('in promise')//立即执行
+		//异步处理逻辑
+		//如果异步处理成功调用resolve 此时 promise实例由pending=>fulfilled
+		//如果异步处理失败调用reject 此时 promise实例由pending=>rejected
+		setTimeout(()=>{
+			// resolve('ok')
+			reject('error')
+		},0)
+	})
+	console.log(promise)//Promise {<pending>}
+
+	promise
+	//成功
+	.then(data=>{
+		console.log(data)//ok
+		console.log(promise)//Promise {<resolved>: "ok"}
+	//失败
+	},err=>{
+		console.log(err)//error
+		console.log(promise)//Promise {<rejected>: "error"}
+	})
+</script>
+</html>

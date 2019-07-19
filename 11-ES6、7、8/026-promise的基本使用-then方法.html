@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	const promise = new Promise((resolve,reject)=>{
+		//只有异步操作的结果,可以决定当前是哪一种状态,任何其他操作都无法改变这个状态
+		setTimeout(()=>{
+			resolve('ok')
+			// reject('error')
+		},0)
+	})
+
+	//promise的then方法返回一个新的promise对象
+	const p1 = promise
+	.then(data=>{
+		console.log(data)
+		return data + ' good'
+	})
+	console.log(p1)//Promise {<pending>}
+	p1
+	.then(data=>{
+		console.log(data)
+	})
+
+	//等价于
+	promise
+	.then(data=>{
+		return data + (' good')
+	})
+	.then(data=>{
+		console.log(data)
+	})
+
+
+
+	//then方法始终返回新的promise
+	let p2;
+	const p1 = promise
+	.then(data=>{
+		p2 = new Promise((resolve,reject)=>{
+			resolve('good')
+		})
+		return p2
+	})
+	p1.then((data)=>{
+		console.log(data)//good
+
+		console.log(p1)//Promise {<resolved>: "good"}
+
+		console.log(p2)//Promise {<resolved>: "good"}
+
+		console.log(p1 == p2)//false
+	})
+	
+
+	//总结
+	//1.promise的then方法无论返回的是否是promise对象，then方法都会返回一个新的promise对象
+	//2.新的promise对象的方法的值是上一个promise then方法的返回值，如果是具体的数据，返回值就是数据，如果是promise，返回值就是promise成功时候的返回值。
+</script>
+</html>
