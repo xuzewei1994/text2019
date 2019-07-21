@@ -26,7 +26,7 @@
 	const p3 = Promise.resolve(obj1)
 	console.log('p3:',p3)
 	
-	//如果参数参数不是具有then方法的对象,或根本就不是对象,返回一个新的 Promise 对象,状态为resolved
+	//如果参数不是具有then方法的对象,或根本就不是对象,返回一个新的 Promise 对象,状态为resolved
 	const obj2 = {
 		onThen:function(){
 			console.log("then fn of obj1")

@@ -7,10 +7,24 @@
 <body>
 	
 </body>
-<script src="js/jquery-1.12.4.js"></script>
 <script>
-	/*
-	//2.DOM
+	
+	const p1 = Promise.resolve('p1 data')
+	const p2 = Promise.resolve('p2 data')
+	const p3 = Promise.resolve('p3 data')
+	const p4 = Promise.reject('p4 data')
+	//接受一个Promise实例数组作为参数,返回一个新Promise实例
+	const p = Promise.all([p1,p2,p3,p4])
+
+	console.log(p)
+	p
+	.then(data=>{
+		console.log(data)
+	})
+	.catch(err=>{
+		console.log(err)
+	})
+
 	const img = new Image()
 
 	img.onload = function(){
@@ -23,7 +37,7 @@
 
 	img.src = 'image/mn.jpg'
 	console.log('after get img')
-	*/
+
 
 	//1.需要一个生成promise对象的函数
 	const getImagePromise = (src)=>new Promise((resolve,reject)=>{
@@ -39,21 +53,19 @@
 
 		img.src = src
 	})
-	
-	//2.用函数生成promise
-	getImagePromise('image/mn.jpg')
+
+
+	const promises = ['image/0.png','image/1.png','image/2.png','image/3.png'].map(src=>getImagePromise(src))
+
+	console.log(promises)
+
+	const p = Promise.all(promises)
+
+	p
 	.then(data=>{
-		console.log(data)//image/mn.jpg img loaded success!
-	})
-	.catch(err=>{
-		console.log(err)//image/mn1.jpg img loaded error!
+		console.log(data)
 	})
 
-
-
-
-
-	
 
 </script>
 </html>

@@ -8,11 +8,23 @@
 	
 </body>
 <script>
-	//函数调用时，把数组转换为参数列表
-	function sum(n1,n2){
-		return n1+n2
+	const promise = new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve('success data')
+		},200)
+	})
+	async function fn(){
+		const data1 = await promise
+
+		console.log('get data1=',data1)
+
+		console.log('do something...')
+
+		return data1
 	}
-	const arr = [3,4]
-	console.log(sum(...arr))
+	fn()
+	.then(data=>{
+		console.log(data)
+	})
 </script>
 </html>
