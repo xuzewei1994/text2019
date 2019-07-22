@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name
+			this.age = age
+		}
+		sayName(){
+			console.log('My name is '+this.name)
+		}
+		sayAge(){
+			console.log('I am '+this.age+' years old')
+		}
+		static sayHi(){
+			console.log('hello guys')
+		}
+	}
+
+
+	const person = new Person('Tom',18)
+
+	person.sayName()
+	person.sayAge()
+	Person.sayHi()
+
+	class Student extends Person{
+		constructor(name,age,major){
+			//在子类的构造函数中,只有调用super之后,才可以使用this关键字
+			super(name,age)
+			this.major = major
+		}
+		sayMajor(){
+			console.log('I am from '+this.major)
+		}
+	}
+
+	const student = new Student('Leo',88,'Computer')
+	console.log(student)
+	student.sayName()
+	student.sayAge()
+	student.sayMajor()
+
+</script>
+</html>
